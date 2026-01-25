@@ -37,3 +37,9 @@ Static Files that shall be included:
 ```zsh
 /files/
 ```
+
+The CV subpage can be edited by changing the file contents in:
+
+```zsh
+_pages/cv.md
+```
