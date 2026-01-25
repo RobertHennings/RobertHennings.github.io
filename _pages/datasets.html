@@ -1,0 +1,72 @@
+---
+layout: archive
+title: "Datasets"
+permalink: /datasets/
+author_profile: true
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/datasets.css' | relative_url }}">
+
+<p>A curated list of useful datasets for research and analysis. Use the filters and search to explore, or click column
+    headers to sort.</p>
+
+<!-- Filters and Search -->
+<div class="datasets-controls">
+    <div class="search-box">
+        <input type="text" id="dataset-search" placeholder="Search datasets...">
+    </div>
+    <div class="filter-controls">
+        <select id="category-filter">
+            <option value="">All Categories</option>
+        </select>
+        <select id="type-filter">
+            <option value="">All Types</option>
+            <option value="Academic">Academic</option>
+            <option value="Non-Academic">Non-Academic</option>
+        </select>
+    </div>
+</div>
+
+<!-- Datasets Table -->
+<table id="datasets-table" class="datasets-table">
+    <thead>
+        <tr>
+            <th data-sort="name" class="sortable">Name <span class="sort-icon">↕</span></th>
+            <th data-sort="category" class="sortable">Category <span class="sort-icon">↕</span></th>
+            <th data-sort="type" class="sortable">Type <span class="sort-icon">↕</span></th>
+            <th data-sort="source" class="sortable">Source <span class="sort-icon">↕</span></th>
+            <th>Format</th>
+        </tr>
+    </thead>
+    <tbody id="datasets-tbody">
+        {% for dataset in site.data.datasets %}
+        <tr class="dataset-row" data-name="{{ dataset.name | downcase }}"
+            data-description="{{ dataset.description | downcase }}" data-category="{{ dataset.category }}"
+            data-type="{{ dataset.type }}" data-source="{{ dataset.source | downcase }}">
+            <td class="dataset-name-cell">
+                <a href="{{ dataset.url }}" target="_blank" rel="noopener">{{ dataset.name }}</a>
+                {% if dataset.notes %}
+                <span class="dataset-notes-icon" title="{{ dataset.notes }}">💬</span>
+                {% endif %}
+                <br><small class="dataset-description">{{ dataset.description }}</small>
+            </td>
+            <td>{{ dataset.category }}</td>
+            <td>{{ dataset.type }}</td>
+            <td>{{ dataset.source }}</td>
+            <td>{{ dataset.format }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- No results message -->
+<div id="no-results" class="no-results" style="display: none;">
+    <p>No datasets match your search criteria.</p>
+</div>
+
+<!-- Datasets count -->
+<div class="datasets-count">
+    Showing <span id="visible-count">{{ site.data.datasets.size }}</span> of {{ site.data.datasets.size }} datasets
+</div>
+
+<script src="{{ '/assets/js/datasets.js' | relative_url }}"></script>

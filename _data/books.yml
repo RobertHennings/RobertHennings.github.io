@@ -11,74 +11,546 @@
 #   - goodreads_url: Link to Goodreads page (optional)
 #   - notes: Brief personal notes/review (optional)
 
-- title: "Thinking, Fast and Slow"
-  author: "Daniel Kahneman"
+# Currently reading
+- title: "Can't Hurt Me"
+  author: "David Goggins"
+  year_read: 2026
+  rating: 0
+  category: "Currently Reading"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Kampf dem Terror - Kampf dem Islam?: Chronik eines unbegrenzten Krieges"
+  author: "Peter Scholl Latour"
+  year_read: 2026
+  rating: 0
+  category: "Currently Reading"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "The Math of Life and Death: 7 Mathematical Principles That Shape Our Lives"
+  author: "Kit Yates"
+  year_read: 2026
+  rating: 0
+  category: "Currently Reading"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Reinforcement Learning for Finance"
+  author: "Samit Ahlawat"
+  year_read: 2026
+  rating: 0
+  category: "Currently Reading"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+# Economy, Politics and Macroeconomics
+- title: "The World for Sale: Money, Power, and the Traders Who Barter the Earth's Resources"
+  author: "Jack Farchy, Javier Blas"
+  year_read: 2024
+  rating: 5
+  category: "Economy & Politics"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Erneuerbare Energien zum Verstehen und Mitreden"
+  author: "Christian Holler, Joachim Gaukel, Harald Lesch, Florian Lesch, Charlotte Kelschenbach"
+  year_read: 2024
+  rating: 4
+  category: "Economy & Politics"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Principles for Dealing with the Changing World Order: Why Nations Succeed or Fail"
+  author: "Ray Dalio"
+  year_read: 2024
+  rating: 5
+  category: "Economy & Politics"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Die Bürgerliche Revolution: Wie wir unsere Freiheit und unseren Wohlstand erhalten"
+  author: "Markus Krall"
+  year_read: 2024
+  rating: 4
+  category: "Economy & Politics"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+# Coding Infrastructure, Best Practices and Development Processes
+- title: "Git – kurz & gut"
+  author: "Nina Siessegger"
+  year_read: 2024
+  rating: 4
+  category: "Technical"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Pro Git"
+  author: "Scott Chacon, Ben Straub"
+  year_read: 2024
+  rating: 5
+  category: "Technical"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Using Docker"
+  author: "Adrian Mouat"
+  year_read: 2024
+  rating: 4
+  category: "Technical"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Introducing MLOps: How to Scale Machine Learning in the Enterprise"
+  author: "Mark Treveil, Nicolas Omont, Clément Stenac, Kenji Lefevre, Du Phan, Joachim Zentici, Adrien Lavoillotte, Makoto Miyazaki, Lynn Heidmann"
+  year_read: 2024
+  rating: 4
+  category: "Technical"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+# Coding
+- title: "Python for Excel: A Modern Environment for Automation and Data Analysis"
+  author: "Felix Zumstein"
+  year_read: 2024
+  rating: 4
+  category: "Coding"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Python for Data Analysis: Data Wrangling with Pandas, NumPy, and Jupyter"
+  author: "Wes McKinney"
+  year_read: 2024
+  rating: 5
+  category: "Coding"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Data Science from Scratch: First Principles with Python"
+  author: "Joel Grus"
+  year_read: 2023
+  rating: 5
+  category: "Coding"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Web Scraping with Python"
+  author: "Ryan Mitchell"
+  year_read: 2023
+  rating: 4
+  category: "Coding"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Pandas for Everyone: Python Data Analysis"
+  author: "Daniel Y. Chen"
+  year_read: 2023
+  rating: 4
+  category: "Coding"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+# Statistics, Mathematics and Machine Learning
+- title: "An Introduction to Statistical Learning: with Applications in R"
+  author: "Gareth James, Daniela Witten"
+  year_read: 2023
+  rating: 5
+  category: "Statistics & ML"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "The Handbook of Energy Trading"
+  author: "Stefano Fiorenzani, Samuele Ravelli, Enrico Edoli"
+  year_read: 2023
+  rating: 4
+  category: "Statistics & ML"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Wirtschafts- und Bevölkerungsstatistik"
+  author: "Andreas Behr, Götz Rohwer"
+  year_read: 2022
+  rating: 4
+  category: "Statistics & ML"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Grundwissen Deskriptive Statistik"
+  author: "Andreas Behr"
+  year_read: 2023
+  rating: 4
+  category: "Statistics & ML"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Financial Capital. Data and Models"
+  author: "Andreas Behr, Götz Rohwer"
+  year_read: 2022
+  rating: 4
+  category: "Statistics & ML"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Grundwissen Induktive Statistik"
+  author: "Andreas Behr, Götz Rohwer"
+  year_read: 2022
+  rating: 4
+  category: "Statistics & ML"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Neuromathematik und Assoziativmaschinen"
+  author: "Hans-Joachim Bentz, Andreas Dierks"
+  year_read: 2022
+  rating: 4
+  category: "Statistics & ML"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Time Series Analysis"
+  author: "James D. Hamilton"
+  year_read: 2022
+  rating: 5
+  category: "Statistics & ML"
+  cover_url: ""
+  goodreads_url: ""
+  notes: "Parts read"
+
+- title: "Advances in Financial Machine Learning"
+  author: "Marcos López de Prado"
+  year_read: 2022
+  rating: 5
+  category: "Statistics & ML"
+  cover_url: ""
+  goodreads_url: ""
+  notes: "Parts read"
+
+# Philosophy and rational thinking
+- title: "The Time Machine"
+  author: "H. G. Wells"
+  year_read: 2021
+  rating: 5
+  category: "Philosophy"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Hiking With Nietzsche: On Becoming Who You Are"
+  author: "John J. Kaag"
+  year_read: 2021
+  rating: 4
+  category: "Philosophy"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Becoming Myself: A Psychiatrist's Memoir"
+  author: "Irvin D. Yalom"
+  year_read: 2021
+  rating: 4
+  category: "Philosophy"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Moralischer Fortschritt in dunklen Zeiten: Universale Werte für das 21. Jahrhundert"
+  author: "Markus Gabriel"
+  year_read: 2021
+  rating: 4
+  category: "Philosophy"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Factfulness: Ten Reasons We're Wrong About The World - And Why Things Are Better Than You Think"
+  author: "Hans Rosling"
+  year_read: 2021
+  rating: 5
+  category: "Philosophy"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "The Art of Thinking Clearly: The Secrets of Perfect Decision-Making"
+  author: "Rolf Dobelli"
+  year_read: 2020
+  rating: 5
+  category: "Philosophy"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Die letzten Rätsel der Mathematik"
+  author: "Ian Stewart, Monika Niehaus, Dr. Bernd Schuh"
+  year_read: 2020
+  rating: 4
+  category: "Philosophy"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Dark Data: Why What You Don't Know Matters"
+  author: "David J. Hand"
+  year_read: 2024
+  rating: 4
+  category: "Philosophy"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Gefangen in der Opferrolle: Warum Wokeness scheitert"
+  author: "Varnan Chandreswaran"
+  year_read: 2024
+  rating: 4
+  category: "Philosophy"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+# Physics and Space
+- title: "Brief Answers to the Big Questions"
+  author: "Stephen Hawking"
+  year_read: 2020
+  rating: 5
+  category: "Physics & Space"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "A Brief History of Time: And Other Essays"
+  author: "Stephen Hawking"
+  year_read: 2020
+  rating: 5
+  category: "Physics & Space"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+# Quantitative Finance/Financial Engineering
+- title: "Financial Engineering: Strategien, Bewertungen und Risikomanagement"
+  author: "Michael Bloss, Daniel Sörensen, Manuel Kleinknecht"
+  year_read: 2023
+  rating: 4
+  category: "Quantitative Finance"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Market Microstructure in Practice: Second Edition"
+  author: "Sophie Laruelle, Charles-Albert Lehalle"
+  year_read: 2023
+  rating: 5
+  category: "Quantitative Finance"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Options, Futures, and Other Derivatives"
+  author: "John C. Hull"
+  year_read: 2022
+  rating: 5
+  category: "Quantitative Finance"
+  cover_url: ""
+  goodreads_url: ""
+  notes: "Parts read"
+
+- title: "Energy Trading and Risk Management"
+  author: "Iris Mack"
+  year_read: 2022
+  rating: 4
+  category: "Quantitative Finance"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Fixed Income Analysis"
+  author: "Frank J. Fabozzi"
+  year_read: 2022
+  rating: 4
+  category: "Quantitative Finance"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Mathematical Finance"
+  author: "Ernst Eberlein, Jan Kallsen"
+  year_read: 2022
+  rating: 5
+  category: "Quantitative Finance"
+  cover_url: ""
+  goodreads_url: ""
+  notes: "Parts read"
+
+- title: "Optimal Investment"
+  author: "L. C. G. Rogers"
+  year_read: 2022
+  rating: 4
+  category: "Quantitative Finance"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+# Quant/ Asset Class History
+- title: "The Man Who Solved the Market"
+  author: "Gregory Zuckerman"
+  year_read: 2021
+  rating: 5
+  category: "Quant History"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "The Bond King: How One Man Made a Market, Built an Empire, and Lost It All"
+  author: "Mary Childs"
+  year_read: 2023
+  rating: 5
+  category: "Quant History"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Beat the Market: A Scientific Stock Market System"
+  author: "Edward O. Thorp, Sheen T. Kassouf"
+  year_read: 2021
+  rating: 5
+  category: "Quant History"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "The Quants: How a New Breed of Math Whizzes Conquered Wall Street and Nearly Destroyed It"
+  author: "Scott Patterson"
+  year_read: 2021
+  rating: 5
+  category: "Quant History"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Taking the Floor: Models, Morals, and Management in a Wall Street Trading Room"
+  author: "Daniel Beunza"
+  year_read: 2021
+  rating: 4
+  category: "Quant History"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Nerds on Wall Street: Math, Machines and Wired Markets"
+  author: "David J. Leinweber"
+  year_read: 2021
+  rating: 4
+  category: "Quant History"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+# Communication
+- title: "Das Harvard-Konzept: Die unschlagbare Methode für beste Verhandlungsergebnisse"
+  author: "William Ury, Roger Fisher"
+  year_read: 2020
+  rating: 5
+  category: "Communication"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+# Psychology
+- title: "Persönlichkeit – Auf der Suche nach unserer Individualität"
+  author: "Christian Montag"
+  year_read: 2020
+  rating: 4
+  category: "Psychology"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Von der Kunst des Zuhörens: Therapeutische Aspekte der Psychoanalyse"
+  author: "Erich Fromm"
+  year_read: 2020
+  rating: 4
+  category: "Psychology"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+- title: "Why We Remember: Unlocking Memory's Power to Hold on to What Matters"
+  author: "Charan Ranganath"
   year_read: 2024
   rating: 5
   category: "Psychology"
   cover_url: ""
-  goodreads_url: "https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow"
-  notes: "Excellent exploration of cognitive biases and decision-making."
+  goodreads_url: ""
+  notes: ""
 
-- title: "The Pragmatic Programmer"
-  author: "David Thomas, Andrew Hunt"
-  year_read: 2024
+# Blockchain and other tech stuff
+- title: "Blockchain: Hype oder Innovation"
+  author: "Christoph Meinel, Tatiana Gayvoronskaya"
+  year_read: 2020
+  rating: 4
+  category: "Tech"
+  cover_url: ""
+  goodreads_url: ""
+  notes: ""
+
+# Stock Valuation and general Investing
+- title: "Unternehmensbewertung & Kennzahlenanalyse"
+  author: "Nicolas Schmidlin"
+  year_read: 2020
   rating: 5
-  category: "Technical"
+  category: "Investing"
   cover_url: ""
-  goodreads_url: "https://www.goodreads.com/book/show/4099.The_Pragmatic_Programmer"
-  notes: "A must-read for every software developer."
+  goodreads_url: ""
+  notes: ""
 
-- title: "Atomic Habits"
-  author: "James Clear"
-  year_read: 2023
+- title: "So funktioniert die Börse"
+  author: "Christoph A. Scherbaum"
+  year_read: 2019
   rating: 4
-  category: "Self-Help"
+  category: "Investing"
   cover_url: ""
-  goodreads_url: "https://www.goodreads.com/book/show/40121378-atomic-habits"
-  notes: "Practical strategies for building good habits."
+  goodreads_url: ""
+  notes: ""
 
-- title: "Deep Work"
-  author: "Cal Newport"
-  year_read: 2023
-  rating: 5
-  category: "Productivity"
-  cover_url: ""
-  goodreads_url: "https://www.goodreads.com/book/show/25744928-deep-work"
-  notes: "Changed how I approach focused work."
-
-- title: "The Design of Everyday Things"
-  author: "Don Norman"
-  year_read: 2022
+- title: "Fundamentalanalyse versus Chartanalyse: Methoden der Aktienbewertung im Vergleich"
+  author: "Viktor Heese, Christian Riedel"
+  year_read: 2019
   rating: 4
-  category: "Design"
+  category: "Investing"
   cover_url: ""
-  goodreads_url: "https://www.goodreads.com/book/show/840.The_Design_of_Everyday_Things"
-  notes: "Fundamental principles of good design."
+  goodreads_url: ""
+  notes: ""
 
-- title: "Clean Code"
-  author: "Robert C. Martin"
-  year_read: 2022
+- title: "Der entspannte Weg zum Reichtum"
+  author: "Susan Levermann"
+  year_read: 2019
   rating: 4
-  category: "Technical"
+  category: "Investing"
   cover_url: ""
-  goodreads_url: "https://www.goodreads.com/book/show/3735293-clean-code"
-  notes: "Essential reading for writing maintainable code."
-
-- title: "Sapiens: A Brief History of Humankind"
-  author: "Yuval Noah Harari"
-  year_read: 2021
-  rating: 5
-  category: "History"
-  cover_url: ""
-  goodreads_url: "https://www.goodreads.com/book/show/23692271-sapiens"
-  notes: "Fascinating perspective on human history."
-
-- title: "The Lean Startup"
-  author: "Eric Ries"
-  year_read: 2021
-  rating: 4
-  category: "Business"
-  cover_url: ""
-  goodreads_url: "https://www.goodreads.com/book/show/10127019-the-lean-startup"
-  notes: "Great framework for building products iteratively."
+  goodreads_url: ""
+  notes: ""

@@ -1,0 +1,124 @@
+/* Datasets Page Styles - Matches existing site theme */
+
+/* Controls */
+.datasets-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75em;
+    margin-bottom: 1.5em;
+    align-items: center;
+}
+
+.datasets-controls .search-box {
+    flex: 1;
+    min-width: 200px;
+}
+
+.datasets-controls .search-box input {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid var(--global-border-color);
+    border-radius: 4px;
+    font-size: 0.75em;
+    font-family: inherit;
+}
+
+.datasets-controls .search-box input:focus {
+    outline: none;
+    border-color: var(--global-base-color);
+}
+
+.datasets-controls .filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.datasets-controls .filter-controls select {
+    padding: 0.5em;
+    border: 1px solid var(--global-border-color);
+    border-radius: 4px;
+    font-size: 0.75em;
+    font-family: inherit;
+    background-color: var(--global-bg-color);
+    cursor: pointer;
+}
+
+.datasets-controls .filter-controls select:focus {
+    outline: none;
+    border-color: var(--global-base-color);
+}
+
+/* Table - uses existing site table styles, just adds sorting */
+.datasets-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.datasets-table th.sortable:hover {
+    background-color: var(--global-dark-border-color);
+}
+
+.datasets-table .sort-icon {
+    margin-left: 0.35em;
+    opacity: 0.6;
+}
+
+/* Dataset Name Cell */
+.dataset-name-cell a {
+    color: var(--global-link-color);
+    text-decoration: none;
+}
+
+.dataset-name-cell a:hover {
+    color: var(--global-link-color-hover);
+    text-decoration: underline;
+}
+
+.dataset-description {
+    color: var(--global-text-color-light);
+    font-size: 0.9em;
+    display: block;
+    margin-top: 0.25em;
+}
+
+.dataset-notes-icon {
+    margin-left: 0.5em;
+    font-size: 0.85em;
+    cursor: pointer;
+}
+
+/* No Results */
+.no-results {
+    text-align: center;
+    padding: 2em;
+    color: var(--global-text-color-light);
+}
+
+/* Datasets Count */
+.datasets-count {
+    text-align: right;
+    color: var(--global-text-color-light);
+    font-size: 0.75em;
+    margin-top: 0.5em;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .datasets-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .datasets-controls .search-box {
+        min-width: 100%;
+    }
+
+    .datasets-controls .filter-controls {
+        flex-direction: column;
+    }
+
+    .datasets-controls .filter-controls select {
+        width: 100%;
+    }
+}
