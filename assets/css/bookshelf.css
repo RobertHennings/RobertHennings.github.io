@@ -1,0 +1,336 @@
+/* Bookshelf Page Styles */
+
+.bookshelf-intro {
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* Statistics Cards */
+.bookshelf-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-top: 0.25rem;
+}
+
+/* Controls */
+.bookshelf-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e1e5eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.filter-controls select {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e1e5eb;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background-color: white;
+    cursor: pointer;
+    min-width: 140px;
+    transition: border-color 0.2s ease;
+}
+
+.filter-controls select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Table Container */
+.bookshelf-table-container {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1rem;
+}
+
+/* Table Styles */
+.bookshelf-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.bookshelf-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bookshelf-table th {
+    padding: 1rem;
+    text-align: left;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.bookshelf-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.bookshelf-table th.sortable:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sort-icon {
+    margin-left: 0.5rem;
+    opacity: 0.7;
+}
+
+.bookshelf-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eef0f3;
+    font-size: 0.95rem;
+}
+
+.bookshelf-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.bookshelf-table tbody tr:hover {
+    background-color: #f8f9ff;
+}
+
+.bookshelf-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Book Title Cell */
+.book-title-cell {
+    font-weight: 500;
+}
+
+.book-title-cell a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.book-title-cell a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+.book-notes-icon {
+    margin-left: 0.5rem;
+    font-size: 0.85rem;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.book-notes-icon:hover {
+    opacity: 1;
+}
+
+/* Category Badge */
+.category-badge {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Year Cell */
+.year-cell {
+    font-weight: 500;
+    color: #555;
+}
+
+/* Rating Stars */
+.rating-cell {
+    white-space: nowrap;
+}
+
+.star {
+    font-size: 1.1rem;
+}
+
+.star.filled {
+    color: #ffc107;
+}
+
+.star.empty {
+    color: #ddd;
+}
+
+/* No Results */
+.no-results {
+    text-align: center;
+    padding: 3rem;
+    background: #f8f9ff;
+    border-radius: 12px;
+    color: #666;
+}
+
+.no-results p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Books Count */
+.books-count {
+    text-align: right;
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .bookshelf-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bookshelf-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        min-width: 100%;
+    }
+
+    .filter-controls {
+        flex-direction: column;
+    }
+
+    .filter-controls select {
+        width: 100%;
+    }
+
+    .bookshelf-table th,
+    .bookshelf-table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .category-badge {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .bookshelf-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .bookshelf-intro {
+        color: #aaa;
+    }
+
+    .search-box input,
+    .filter-controls select {
+        background-color: #2d2d2d;
+        border-color: #444;
+        color: #eee;
+    }
+
+    .search-box input::placeholder {
+        color: #888;
+    }
+
+    .bookshelf-table {
+        background: #1e1e1e;
+    }
+
+    .bookshelf-table td {
+        border-bottom-color: #333;
+    }
+
+    .bookshelf-table tbody tr:hover {
+        background-color: #2a2a3d;
+    }
+
+    .no-results {
+        background: #2d2d2d;
+        color: #aaa;
+    }
+
+    .books-count {
+        color: #888;
+    }
+
+    .year-cell {
+        color: #aaa;
+    }
+}

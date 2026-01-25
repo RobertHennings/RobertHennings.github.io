@@ -1,0 +1,84 @@
+# List of books you've read
+# Add new books by copying the template below and filling in the details
+#
+# Fields:
+#   - title: Book title (required)
+#   - author: Author name(s) (required)
+#   - year_read: Year you read it (required)
+#   - rating: Your rating 1-5 (required)
+#   - category: e.g., Fiction, Non-Fiction, Technical, Biography, etc. (required)
+#   - cover_url: URL to book cover image (optional, leave empty for placeholder)
+#   - goodreads_url: Link to Goodreads page (optional)
+#   - notes: Brief personal notes/review (optional)
+
+- title: "Thinking, Fast and Slow"
+  author: "Daniel Kahneman"
+  year_read: 2024
+  rating: 5
+  category: "Psychology"
+  cover_url: ""
+  goodreads_url: "https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow"
+  notes: "Excellent exploration of cognitive biases and decision-making."
+
+- title: "The Pragmatic Programmer"
+  author: "David Thomas, Andrew Hunt"
+  year_read: 2024
+  rating: 5
+  category: "Technical"
+  cover_url: ""
+  goodreads_url: "https://www.goodreads.com/book/show/4099.The_Pragmatic_Programmer"
+  notes: "A must-read for every software developer."
+
+- title: "Atomic Habits"
+  author: "James Clear"
+  year_read: 2023
+  rating: 4
+  category: "Self-Help"
+  cover_url: ""
+  goodreads_url: "https://www.goodreads.com/book/show/40121378-atomic-habits"
+  notes: "Practical strategies for building good habits."
+
+- title: "Deep Work"
+  author: "Cal Newport"
+  year_read: 2023
+  rating: 5
+  category: "Productivity"
+  cover_url: ""
+  goodreads_url: "https://www.goodreads.com/book/show/25744928-deep-work"
+  notes: "Changed how I approach focused work."
+
+- title: "The Design of Everyday Things"
+  author: "Don Norman"
+  year_read: 2022
+  rating: 4
+  category: "Design"
+  cover_url: ""
+  goodreads_url: "https://www.goodreads.com/book/show/840.The_Design_of_Everyday_Things"
+  notes: "Fundamental principles of good design."
+
+- title: "Clean Code"
+  author: "Robert C. Martin"
+  year_read: 2022
+  rating: 4
+  category: "Technical"
+  cover_url: ""
+  goodreads_url: "https://www.goodreads.com/book/show/3735293-clean-code"
+  notes: "Essential reading for writing maintainable code."
+
+- title: "Sapiens: A Brief History of Humankind"
+  author: "Yuval Noah Harari"
+  year_read: 2021
+  rating: 5
+  category: "History"
+  cover_url: ""
+  goodreads_url: "https://www.goodreads.com/book/show/23692271-sapiens"
+  notes: "Fascinating perspective on human history."
+
+- title: "The Lean Startup"
+  author: "Eric Ries"
+  year_read: 2021
+  rating: 4
+  category: "Business"
+  cover_url: ""
+  goodreads_url: "https://www.goodreads.com/book/show/10127019-the-lean-startup"
+  notes: "Great framework for building products iteratively."
