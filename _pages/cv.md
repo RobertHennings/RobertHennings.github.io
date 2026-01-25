@@ -13,7 +13,13 @@ Education
 ======
 
 * <b>M.Sc. in Quantitative Finance</b>, <i>Christian-Albrechts-Universität zu Kiel</i>, 10/2021 - current
+  * Courses: Computational Finance, Inferential Statistics, Time Series Econometrics, Multivariate Timeseries Analysis & Forecasting
+  * Seminar: Identifying (volatility-)regimes in the EUR/USD spot exchange rate using clustering algorithms. (Python, see Github)
+
 * <b>B.Sc. in Business Administration with a core profile in Energy and Finance</b>, <i>University Duisburg-Essen (Campus Essen)</i>, 10/2018 - 10/2021
+  * Final Grade: 2,1 (GPA: ~3,0, Upp. sec. class 2.1)
+  * Bachelor thesis: Is liquidity risk still priced in the cross-section of US stocks? (R, Python based) Grade: 1,3 (GPA: 3,7, see Github)
+  * Courses: Investment and Finance, Asset Management, Introduction to Derivatives, Descriptive Statistics, Statistical Inference, Business Statistics, Introduction to Econometrics, Database Management Systems, Statistics and Computing
 
 Professional Experience
 ======
@@ -59,19 +65,46 @@ Professional Experience
 
 ---
 
-* <b>Statista GmbH (Hamburg)</b> 11/2021 - 12/2022
+* <b>Statista GmbH (Hamburg)</b> 11/2021 - 03/2023
 * <i>Working student Data Analytics at Statista Q (Data Science branch of Statista)</i>
-  * Independent Data research on various topics in combination with data preparation and cleaning
-  * Carrying out descriptive analyses and preparation of results in common presentation formats using Python, R
+  * preparation of descriptive statistics and reports
+  * Online research activities within the framework of international projects
+  * Research of company key figures, sales contacts and other relevant data
+  * Processing and cleaning of all kinds of data
+  * Datavalidation and Dataresearch
+  * API Testing and Integration
+  * Software: R, Python
+
+---
+
+* <b>IVC - Independent Valuation and Consulting AG WPG (Essen)</b> 04/2021 - 06/2021
+* <i>Internship - Research Analyst</i>
+  * Application of capital value-oriented valuation methods (capitalised earnings value method and DCF method)
+  * support in the valuation of financial instruments for accounting purposes
+  * Use of (Excel-based) IVC tools for valuations and the collection of market parameters
+  * Application of the databases of S&P Capital IQ and Refinitiv
+  * Determination of cost of capital (base rates and risk premiums, especially unlevered/debt betas as well as credit spreads)
+
+---
+
+* <b>University Duisburg-Essen, Chair of Marketing and Retailing (Prof. Dr. Schröder) (Essen)</b> 03/2019 - 08/2020
+* <i>Student Assistant Procurement and Purchasing</i>
+  * Support with research projects: Research and preparation of reports
+  * Independent project work: preparation and implementation of an internship regulars' table
+  * Maintenance of the chair's internet presence with the content management system TYPO3
+  * Support with administrative tasks in the chair secretariat
+  * support of the procurement/purchasing department
+  * Implementation of new procurement guidelines, integration of these into the process workflow
+  * Insight into the structure and booking system as well as the administrative processing of payment transactions of the university
 
 Skills
 ======
 
-* Programming Languages: Python, R, SQL, Basic knowledge in: Java, HTML, CSS, STATA, Matlab
-* Big Data & Machine Learning: Python (Sklearn, PyTorch, SciPy, Pandas, Matplotlib, Seaborn, Shap, ReportLab, PPTX, glob)
-* Additional: Financial databases (Bloomberg-Terminal, Refinitiv Reuters and S&P Capital IQ), Tableau, SAP SRM, SPSS, LaTeX • APIs: NewsAPI, YahooFinance, Meteostat, PyTrends, Energy Quantified, EntsoE, Streamlit Dashboards, ECB Data Portal
-* Programming Environments and Architecture: REST, GIT, Github, MS Azure, OOP, Debugging, Command line Tools, Docker, Kubernetes, Hadoop, Spark
-* Webscraping and NLP: Requests, Selenium, BeautifoulSoup, NLTK, FinBert, Bert, Loughran-McDonald Dictionary
+* <b>Programming Languages:</b> Python, R, SQL, Basic knowledge in: Java, HTML, CSS, STATA, Matlab
+* <b>Big Data & Machine Learning:</b> Python (Sklearn, PyTorch, SciPy, Pandas, Matplotlib, Seaborn, Shap, ReportLab, PPTX, glob)
+* <b>Additional:</b> Financial databases (Bloomberg-Terminal, Refinitiv Reuters and S&P Capital IQ), Tableau, SAP SRM, SPSS, LaTeX • APIs: NewsAPI, YahooFinance, Meteostat, PyTrends, Energy Quantified, EntsoE, Streamlit Dashboards, ECB Data Portal
+* <b>Programming Environments and Architecture:</b> REST, GIT, Github, MS Azure, OOP, Debugging, Command line Tools, Docker, Kubernetes, Hadoop, Spark
+* <b>Webscraping and NLP:</b> Requests, Selenium, BeautifoulSoup, NLTK, FinBert, Bert, Loughran-McDonald Dictionary
 
 <!-- Publications
 ======
@@ -97,16 +130,91 @@ Teaching
 Projects & Leadership
 ======
 
+* <b>Studienkompass - Stiftung der deutschen Wirtschaft (Kiel) 03/2024 - 06/2026</b>
+* <i>Youth Mentor</i>
+  * On-site support and individual advice for participants
+  * Guidance and support for young people in the implementation of both individual and cross-group projects for study and career orientation
+  * Organization and coordination of regional events such as lectures, camps, excursions, digital group meetings for exchange, etc. (every 4-6 weeks)
+  * Designing and implementing the content of workshops, and a regular coordination within the mentoring team, as well as with the full-time regional coordinator and support program trainers
+
+---
+
+* <b>DRLG - German Association for Live Saving (Kiel) 05/2024 - current</b>
+* <i>Life guard and Rescue boat driver</i>
+  * water rescue
+  * regatta support
+  * boat service
+
+---
+
+* <b>Christian-Albrechts-Universität zu Kiel (Kiel)</b>
+* <i>Tutor, A-level student project: Ask A Student (AAS)</i>
+  * several iterations:
+    * 11/2022 - 12/2022
+    * 03/2023 - 06/2023
+    * 11/2023 - 12/2023
+    * 03/2024 - 06/2024
+    * 11/2024 - 12/2024
+    * 03/2025 - 06/2025
+    * 11/2025 - 12/2025
+
+---
+
 * <b>Special Olympics World Games (Berlin) 06/2023</b>
-  * <i>Key Volunteer Venue Management (Futsal and Hockey)</i>
+* <i>Key Volunteer Venue Management (Futsal and Hockey)</i>
+
+---
 
 * <b>European Championships (Munich) 08/2022</b>
-  * <i>Volunteer Volunteer Management, Technical Logistics</i>
+* <i>Volunteer Management, Technical Logistics</i>
+
+---
+
+* <b>Special Olypmpics (Kiel) 05/2022</b>
+* <i>Volunteer - Swimming</i>
+
+---
+
+* <b>e-fellows.net (remote) 09/2021</b>
+* <i>Student Volunteer</i>
+  * Startschuss Abi-Nord 2021
+  * Startschuss Abi-NRW 2021
+
+---
 
 * <b>Academic Stock Exchange Association Bochum e. V. (ABB .e .V.) (Ruhr-Area)</b> 11/2020 - 06/2023
-  * <i>Vice Chairman of the Board</i>
-    * Administrative activities including initialization /holding of lectures and new formats on quantitative finance topics (see Github)
-    * Demonstrated static hedging strategies (Delta, Delta-Gamma) and Machine Learning approaches for time-series forecasting
+* <i>Vice Chairman of the Board</i>
+  * Administrative activities related to the life of the association
+  * Initialisation of series of lectures and new formats on
+  topics of quantitative finance
+  * Promoting discourse on developments in capital and technology markets
+  * Lectures I gave:
+    * Are dividends actually disappearing? Global evidence  
+    * The Support Vector Machine (SVM) algorithm for time series forecasting
+    * The ARIMA model and other time series models
+    * Hedging strategies with derivative financial instruments
+    * Sea wave forecasting systems and their application in the financial/energy sector
+    * Python for Excel: Using xlwings to automate Spreadsheets
+
+---
+
+* <b>University Duisburg-Essen, Faculty of Business and Economics (Essen)</b> 09/2020 - 09/2021
+* <i>First Semester Tutor</i>
+  * supporting first-semester students in orientation, organisation
+  * Providing information on the key points of studying business administration
+  * Contact person for self- and time management as well as learning techniques
+  * Peer learning
+  * Study counselling and pointing out job prospects
+
+---
+
+* <b>PTSV - Preetzer Turn und Sportverein e.V. (Preetz)</b> 10/2016 - 12/2017
+* <i>Athletics Instructor</i>
+  * training planning and preparation
+  * Organisation and organisation of competitions
+  * Establishment of a fitness room for the athletics department
+  * interdepartmental cooperation within the club
+  * Competition-oriented athlete preparation
 
 Additional Information
 ======
