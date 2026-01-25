@@ -1,6 +1,6 @@
 /**
  * Bookshelf Interactive Table JavaScript
- * Handles filtering, sorting, and statistics for the books table
+ * Handles filtering, sorting for the books table
  */
 
 (function () {
@@ -57,32 +57,6 @@
             option.textContent = year;
             yearFilter.appendChild(option);
         });
-
-        // Calculate and display statistics
-        function updateStats() {
-            var totalBooks = rows.length;
-            if (totalBooks === 0) return;
-
-            var sum = 0;
-            rows.forEach(function (r) {
-                sum += parseInt(r.dataset.rating, 10) || 0;
-            });
-            var avgRating = (sum / totalBooks).toFixed(1);
-            var totalCategories = categories.length;
-            var currentYear = new Date().getFullYear();
-            var currentYearBooks = rows.filter(function (r) {
-                return parseInt(r.dataset.year, 10) === currentYear;
-            }).length;
-
-            var avgRatingEl = document.getElementById('avg-rating');
-            var totalCategoriesEl = document.getElementById('total-categories');
-            var currentYearBooksEl = document.getElementById('current-year-books');
-
-            if (avgRatingEl) avgRatingEl.textContent = avgRating;
-            if (totalCategoriesEl) totalCategoriesEl.textContent = totalCategories;
-            if (currentYearBooksEl) currentYearBooksEl.textContent = currentYearBooks;
-        }
-        updateStats();
 
         // Filter function
         function filterBooks() {

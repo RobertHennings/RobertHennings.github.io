@@ -7,35 +7,12 @@ author_profile: true
 
 <link rel="stylesheet" href="{{ '/assets/css/bookshelf.css' | relative_url }}">
 
-<div class="bookshelf-intro">
-    <p>A collection of books I've read over the years. Use the filters and search to explore, or click on column headers
-        to sort.</p>
-</div>
-
-<!-- Statistics Cards -->
-<div class="bookshelf-stats">
-    <div class="stat-card">
-        <span class="stat-number" id="total-books">{{ site.data.books.size }}</span>
-        <span class="stat-label">Books Read</span>
-    </div>
-    <div class="stat-card">
-        <span class="stat-number" id="avg-rating">-</span>
-        <span class="stat-label">Avg Rating</span>
-    </div>
-    <div class="stat-card">
-        <span class="stat-number" id="total-categories">-</span>
-        <span class="stat-label">Categories</span>
-    </div>
-    <div class="stat-card">
-        <span class="stat-number" id="current-year-books">-</span>
-        <span class="stat-label">This Year</span>
-    </div>
-</div>
+<p>A collection of books I've read. Use the filters and search to explore, or click column headers to sort.</p>
 
 <!-- Filters and Search -->
 <div class="bookshelf-controls">
     <div class="search-box">
-        <input type="text" id="book-search" placeholder="🔍 Search books or authors...">
+        <input type="text" id="book-search" placeholder="Search books or authors...">
     </div>
     <div class="filter-controls">
         <select id="category-filter">
@@ -46,60 +23,50 @@ author_profile: true
         </select>
         <select id="rating-filter">
             <option value="">All Ratings</option>
-            <option value="5">⭐⭐⭐⭐⭐ (5)</option>
-            <option value="4">⭐⭐⭐⭐ (4+)</option>
-            <option value="3">⭐⭐⭐ (3+)</option>
+            <option value="5">5 Stars</option>
+            <option value="4">4+ Stars</option>
+            <option value="3">3+ Stars</option>
         </select>
     </div>
 </div>
 
 <!-- Books Table -->
-<div class="bookshelf-table-container">
-    <table id="bookshelf-table" class="bookshelf-table">
-        <thead>
-            <tr>
-                <th data-sort="title" class="sortable">Title <span class="sort-icon">↕</span></th>
-                <th data-sort="author" class="sortable">Author <span class="sort-icon">↕</span></th>
-                <th data-sort="category" class="sortable">Category <span class="sort-icon">↕</span></th>
-                <th data-sort="year_read" class="sortable">Year Read <span class="sort-icon">↕</span></th>
-                <th data-sort="rating" class="sortable">Rating <span class="sort-icon">↕</span></th>
-            </tr>
-        </thead>
-        <tbody id="books-tbody">
-            {% for book in site.data.books %}
-            <tr class="book-row" data-title="{{ book.title | downcase }}" data-author="{{ book.author | downcase }}"
-                data-category="{{ book.category }}" data-year="{{ book.year_read }}" data-rating="{{ book.rating }}">
-                <td class="book-title-cell">
-                    {% if book.goodreads_url %}
-                    <a href="{{ book.goodreads_url }}" target="_blank" rel="noopener">{{ book.title }}</a>
-                    {% else %}
-                    {{ book.title }}
-                    {% endif %}
-                    {% if book.notes %}
-                    <span class="book-notes-icon" title="{{ book.notes }}">💬</span>
-                    {% endif %}
-                </td>
-                <td>{{ book.author }}</td>
-                <td><span class="category-badge">{{ book.category }}</span></td>
-                <td class="year-cell">{{ book.year_read }}</td>
-                <td class="rating-cell">
-                    {% assign rating = book.rating %}
-                    {% for i in (1..5) %}
-                    {% if i <= rating %} <span class="star filled">★</span>
-                        {% else %}
-                        <span class="star empty">☆</span>
-                        {% endif %}
-                        {% endfor %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
+<table id="bookshelf-table" class="bookshelf-table">
+    <thead>
+        <tr>
+            <th data-sort="title" class="sortable">Title <span class="sort-icon">↕</span></th>
+            <th data-sort="author" class="sortable">Author <span class="sort-icon">↕</span></th>
+            <th data-sort="category" class="sortable">Category <span class="sort-icon">↕</span></th>
+            <th data-sort="year_read" class="sortable">Year <span class="sort-icon">↕</span></th>
+            <th data-sort="rating" class="sortable">Rating <span class="sort-icon">↕</span></th>
+        </tr>
+    </thead>
+    <tbody id="books-tbody">
+        {% for book in site.data.books %}
+        <tr class="book-row" data-title="{{ book.title | downcase }}" data-author="{{ book.author | downcase }}"
+            data-category="{{ book.category }}" data-year="{{ book.year_read }}" data-rating="{{ book.rating }}">
+            <td class="book-title-cell">
+                {% if book.goodreads_url %}
+                <a href="{{ book.goodreads_url }}" target="_blank" rel="noopener">{{ book.title }}</a>
+                {% else %}
+                {{ book.title }}
+                {% endif %}
+                {% if book.notes %}
+                <span class="book-notes-icon" title="{{ book.notes }}">💬</span>
+                {% endif %}
+            </td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.category }}</td>
+            <td>{{ book.year_read }}</td>
+            <td class="rating-cell">{{ book.rating }}/5</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 <!-- No results message -->
 <div id="no-results" class="no-results" style="display: none;">
-    <p>📚 No books match your search criteria. Try adjusting the filters!</p>
+    <p>No books match your search criteria.</p>
 </div>
 
 <!-- Books count -->
