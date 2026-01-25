@@ -139,7 +139,7 @@ Projects & Leadership
 
 ---
 
-* <b>DRLG - German Association for Live Saving (Kiel) 05/2024 - current</b>
+* <b>DLRG - German Association for Live Saving (Kiel) 05/2024 - current</b>
 * <i>Life guard and Rescue boat driver</i>
   * water rescue
   * regatta support
