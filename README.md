@@ -43,3 +43,17 @@ The CV subpage can be edited by changing the file contents in:
 ```zsh
 _pages/cv.md
 ```
+
+The main landing page file sits here:
+
+```zsh
+_pages/about.md
+```
+
+The main icon shown in the preview of the browser tabs can be changed under:
+
+```zsh
+images/manifest.json
+```
+
+But the two settings for the size have to be followed.

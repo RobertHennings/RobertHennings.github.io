@@ -1,56 +1,120 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Personal Website of Robert Hennings"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
+Hello and welcome to my personal website. Here, in combination with GitHub, I am hosting some of my projects and other topics that I am currently working on. A lot is currently work-in-progress, so please don't be confused if not everything here is working properly or already holds contents.
 
- You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
-
-A data-driven personal website
+My Perspective
 ======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured Markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various Markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your Markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the Markdown files! You can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+My personal goal is to understand todays financial markets holistically, meaning for me personally, who are the key participants, what motivates them to trade and what restrictions/other regulations and mechanics determine their activities in the complex interplay of nowadays financial system.
 
-For those users that need more advanced functionality, the template also supports the following popular tools:
-- [MathJax](https://www.mathjax.org/) for mathematical equations
-- [Mermaid](https://mermaid.js.org/) for diagraming
-- [Plotly](https://plotly.com/javascript/) for plotting
+In order to at least try to answer my questions, I was very fortunate to gain insights of several, quite different market participants views over the last years.
 
-Getting started
+My Bookshelf
 ======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](https://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+Inspired by a collegue I met during my internship at the Eurex (Clive D'Souza) here are some of the books I read so far, happy for recommendations:
 
-Create content & metadata
-------
-For site content, there is one Markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a Markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each Markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+### Currently reading
 
-**Markdown generator**
+* Can't hurt me - David Goggins - 2018
+* Kampf dem Terror - Kampf dem Islam?: Chronik eines unbegrenzten Krieges - Peter Scholl Latour - 2002
+* The Math of Life and Death: 7 Mathematical Principles That Shape Our Lives - Kit Yates - 2020
+* Reinforcement Learning for Finance - Solve Problems in Finance with CNN and RNN Using the TensorFlow Library - Samit Ahlawat - 2023
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual Markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the Markdown files, then commit and push them to the GitHub repository.
+#### Economy, Politics and Macroeconomics
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and Markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+* The World for Sale: Money, Power, and the Traders Who Barter the Earth's Resources - Jack Farchy, Javier Blas - 2021
+* Erneuerbare Energien zum Verstehen und Mitreden - Christian Holler, Joachim Gaukel, Harald Lesch, Florian Lesch, Charlotte Kelschenbach - 2021
+* Principles for Dealing with the Changing World Order: Why Nations Succeed or Fail - Ray Dalio - 2021
+* Die Bürgerliche Revolution: Wie wir unsere Freiheit und unseren Wohlstand erhalten - Markus Krall - 2020
 
-Example: editing a Markdown file for a talk
-![Editing a Markdown file for a talk](/images/editing-talk.png)
+#### Coding Infrastructure, Best Practices and Development Processes
 
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+* Git – kurz & gut - Nina Siessegger - 2022
+* Pro Git - Scott Chacon, Ben Straub - 2022
+* Using Docker - Adrian Mouat - 2015
+* Introducing MLOps: How to Scale Machine Learning in the Enterprise - Mark Treveil, Nicolas Omont, Clément Stenac, Kenji Lefevre, Du Phan, Joachim Zentici, Adrien Lavoillotte, Makoto Miyazaki, Lynn Heidmann - 2020
+
+#### Coding
+
+* Python for Excel: A Modern Environment for Automation and Data Analysis - Felix Zumstein - 2021
+* Python for Data Analysis: Data Wrangling with Pandas, NumPy, and Jupyter - Wes McKinney - 2022
+* Data Science from Scratch: First Principles with Python - Joel Grus - 2019
+* Web Scraping with Python - Ryan Mitchell - 2018
+* Pandas for Everyone: Python Data Analysis - Daniel Y. Chen - 2017
+
+#### Statistics, Mathematics and Machine Learning
+
+* An Introduction to Statistical Learning: with Applications in R - Gareth James, Daniela Witten - 2021
+* The Handbook of Energy Trading - Stefano Fiorenzani, Samuele Ravelli, Enrico Edoli - 2011
+* Wirtschafts- und Bevölkerungsstatistik - Andreas Behr, Götz Rohwer - 2019
+* Grundwissen Deskriptive Statistik - Andreas Behr - 2023
+* Financial Capital. Data and Models - Andreas Behr, Götz Rohwer - 2021
+* Grundwissen Induktive Statistik - Andreas Behr, Götz Rohwer - 2018
+* Neuromathematik und Assoziativmaschinen - Hans-Joachim Bentz, Andreas Dierks - 2013
+* (Parts) Time Series Analysis - James D. Hamilton - 1994
+* (Parts) Advances in Financial Machine Learning - Marcos López de Prado - 2018
+
+#### Philosophy and rational thinking
+
+* The Time Machine - H. G. Wells - 1895
+* Hiking With Nietzsche: On Becoming Who You Are - John J. Kaag - 2018
+* Becoming Myself: A Psychiatrist's Memoir - Irvin D. YalomIrvin D. Yalom - 2017
+* Moralischer Fortschritt in dunklen Zeiten: Universale Werte für das 21. Jahrhundert - Markus Gabriel - 2020
+* Factfulness: Ten Reasons We're Wrong About The World - And Why Things Are Better Than You Think - Hans Rosling - 2018
+* The Art of Thinking Clearly: The Secrets of Perfect Decision-Making - Rolf Dobelli - 2013
+* Die letzten Rätsel der Mathematik - Ian Stewart, Monika Niehaus, Dr. Bernd Schuh - 2015
+* Dark Data: Why What You Don't Know Matters - David J. Hand - 2022
+* Gefangen in der Opferrolle: Warum Wokeness scheitert - Varnan Chandreswaran - 2024
+
+#### Physics and Space
+
+* Brief Answers to the Big Questions - Stephen Hawking - 2018
+* A Brief History of Time: And Other Essays - Stephen Hawking - 1998
+
+#### Quantitative Finance/Financial Engineering
+
+* Financial Engineering: Strategien, Bewertungen und Risikomanagement -  Michael Bloss, Daniel Sörensen, Manuel Kleinknecht - 2020
+* Market Microstructure in Practice: Second Edition - Sophie Laruelle, Charles-Albert Lehalle - 2018
+* (Parts) Options, Futures, and Other Derivatives - John C. Hull - 2014
+* Energy Trading and Risk Management, A Practical Approach to Hedging, Trading, and Portfolio Diversification - Iris Mack - 2014
+* Fixed Income Analysis - Frank J. Fabozzi - 2007
+* (Parts) Mathematical Finance - Ernst Eberlein, Jan Kallsen - 2020
+* Optimal Investment - L. C. G. Rogers - 2012
+
+#### Quant/ Asset Class History
+
+* The Man who solved the market - Gregory Zuckerman - 2019
+* The Bond King: How One Man Made a Market, Built an Empire, and Lost It All - Mary Childs - 2022
+* Beat the Market: A Scientific Stock Market System - Edward O. Thorp, Sheen T. Kassouf - 1967
+* The Quants: How a New Breed of Math Whizzes Conquered Wall Street and Nearly Destroyed It - Scott Patterson - 2011
+* Taking the Floor: Models, Morals, and Management in a Wall Street Trading Room - Daniel Beunza - 2021
+* Nerds on Wall Street: Math, Machines and Wired Markets - David J. Leinweber - 2009
+
+#### Communication
+
+* Das Harvard-Konzept: Die unschlagbare Methode für beste Verhandlungsergebnisse - William Ury, Roger Fisher - 2018
+
+#### Psychology
+
+* Persönlichkeit – Auf der Suche nach unserer Individualität - Christian Montag - 2016
+* Von der Kunst des Zuhörens: Therapeutische Aspekte der Psychoanalyse - Erich Fromm - 2005
+* Why We Remember: Unlocking Memory's Power to Hold on to What Matters - Charan Ranganath - 2024
+
+#### Blockchain and other tech stuff
+
+* Blockchain: Hype oder Innovation - Christoph Meinel, Tatiana Gayvoronskaya - 2020
+
+#### Stock Valuation and general Investing
+
+* Unternehmensbewertung & Kennzahlenanalyse: Praxisnahe Einführung mit zahlreichen Fallbeispielen börsennotierter Unternehmen - Nicolas Schmidlin - 2020
+* So funktioniert die Börse - Christoph A. Scherbaum - 2015
+* Fundamentalanalyse versus Chartanalyse Methoden der Aktienbewertung im Vergleich - Viktor Heese, Christian Riedel - 2016
+* Der entspannte Weg zum Reichtum - Susan Levermann - 2011
