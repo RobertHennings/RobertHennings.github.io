@@ -8,9 +8,6 @@
 # Markdown formatted page while the second is generated using JSON.
 
 main:
-  - title: "What Dino Nugget Am I?"
-    url: /whatdinonuggetami/
-
   - title: "Publications"
     url: /publications/
 
