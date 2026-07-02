@@ -220,8 +220,14 @@
         { category: "Lost focus", prompt: "You lose focus mid-task. You..." },
         { category: "End of day", prompt: "The day is ending and you reflect. You..." },
     ];
-
-
+    function scoreFor(primary, secondary) {
+        const score = { trex: 0, triceratops: 0, stegosaurus: 0, parasaurolophus: 0, pterodactylus: 0 };
+        score[primary] = 3;
+        if (secondary && secondary !== primary) {
+            score[secondary] = 1;
+        }
+        return score;
+    }
     const optionThemes = [
         {
             name: "Action Mode",
