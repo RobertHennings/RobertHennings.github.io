@@ -572,7 +572,7 @@
 
     // Optional explicit per-category overrides. Add entries when you want a specific
     // question category to use a custom option array.
-    const questionOptionsByCategory = {
+    const QUESTION_OPTIONS = {
         "Lunch mission": [
             { label: "Sprint for the spicy deluxe and eat like a king.", hint: "Big bite, zero hesitation.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Pack the reliable sandwich and vibes stay steady.", hint: "Comfort over chaos.", score: scoreFor("triceratops", "stegosaurus") },
@@ -715,10 +715,32 @@
         ],
     };
 
+    // Mirror category-based entries into prompt-keyed entries for direct source lookup.
+    // This will create entries like QUESTION_OPTIONS["What does your ideal lunch mission look like?"]
+    // for any category already defined in QUESTION_OPTIONS.
+    try {
+        questionStems.forEach((stem) => {
+            try {
+                if (Object.prototype.hasOwnProperty.call(QUESTION_OPTIONS, stem.category) &&
+                    !Object.prototype.hasOwnProperty.call(QUESTION_OPTIONS, stem.prompt)) {
+                    QUESTION_OPTIONS[stem.prompt] = QUESTION_OPTIONS[stem.category];
+                }
+            } catch (e) {
+                // ignore individual mapping errors
+            }
+        });
+    } catch (e) {
+        // noop
+    }
+
     function getOptionsForStem(stem) {
-        // 1) explicit mapping
-        if (Object.prototype.hasOwnProperty.call(questionOptionsByCategory, stem.category)) {
-            const mapped = questionOptionsByCategory[stem.category];
+        // 1) explicit mapping (direct dict lookup by category or exact prompt)
+        if (Object.prototype.hasOwnProperty.call(QUESTION_OPTIONS, stem.category)) {
+            const mapped = QUESTION_OPTIONS[stem.category];
+            if (Array.isArray(mapped) && mapped.length) return mapped;
+        }
+        if (Object.prototype.hasOwnProperty.call(QUESTION_OPTIONS, stem.prompt)) {
+            const mapped = QUESTION_OPTIONS[stem.prompt];
             if (Array.isArray(mapped) && mapped.length) return mapped;
         }
 
@@ -870,11 +892,27 @@
             id: `${stemIndex}-${slugify(stem.category)}`,
             category: stem.category,
             prompt: stem.prompt,
-            options: shuffle(getOptionsForStem(stem)).map((option) => ({ ...option })),
+            // Use a fixed, deterministic options array for each stem.
+            options: getOptionsForStem(stem).map((option) => ({ ...option })),
         }));
     }
 
     const questionBank = buildQuestionBank();
+
+    // Expose a direct mapping for debugging/inspection: question id -> options (full objects).
+    try {
+        if (typeof window !== "undefined") {
+            window.WHATDINO_QUESTION_MAP = Object.fromEntries(
+                questionBank.map((q) => [q.id, q.options.map((o) => ({ label: o.label, hint: o.hint }))])
+            );
+            // Also expose a prompt-keyed mapping so you can look up by exact question text.
+            window.WHATDINO_QUESTION_MAP_PROMPT = Object.fromEntries(
+                questionBank.map((q) => [q.prompt, q.options.map((o) => ({ label: o.label, hint: o.hint }))])
+            );
+        }
+    } catch (e) {
+        // noop
+    }
 
     function getUsedQuestions() {
         const userQuestions = safeRead(USER_HISTORY_KEY);
@@ -910,9 +948,10 @@
         if (available.length < MAX_ROUNDS) {
             return null;
         }
+        // Select random questions but do NOT shuffle or reassign options.
         return shuffle(available).slice(0, MAX_ROUNDS).map((question) => ({
             ...question,
-            options: shuffle(question.options),
+            options: question.options.map((opt) => ({ ...opt })),
         }));
     }
 
