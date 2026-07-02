@@ -220,7 +220,6 @@
         { category: "Lost focus", prompt: "You lose focus mid-task. You..." },
         { category: "End of day", prompt: "The day is ending and you reflect. You..." },
     ];
-
     function scoreFor(primary, secondary) {
         const score = { trex: 0, triceratops: 0, stegosaurus: 0, parasaurolophus: 0, pterodactylus: 0 };
         score[primary] = 3;
@@ -612,10 +611,12 @@
     function safeRead(key) {
         try {
             const value = localStorage.getItem(key) || sessionStorage.getItem(key);
-            if (!value) return [];
+            if (!value) {
+                return [];
+            }
             const parsed = JSON.parse(value);
             return Array.isArray(parsed) ? parsed : [];
-        } catch {
+        } catch (error) {
             return [];
         }
     }
@@ -624,17 +625,23 @@
         try {
             const storage = useSession ? sessionStorage : localStorage;
             storage.setItem(key, JSON.stringify(values.slice(-400)));
-        } catch { }
+        } catch (error) {
+            return;
+        }
     }
 
     function readState() {
         try {
             const raw = sessionStorage.getItem(SESSION_STATE_KEY);
-            if (!raw) return null;
+            if (!raw) {
+                return null;
+            }
             const parsed = JSON.parse(raw);
-            if (!parsed || !Array.isArray(parsed.questions)) return null;
+            if (!parsed || !Array.isArray(parsed.questions)) {
+                return null;
+            }
             return parsed;
-        } catch {
+        } catch (error) {
             return null;
         }
     }
@@ -642,13 +649,17 @@
     function saveState() {
         try {
             sessionStorage.setItem(SESSION_STATE_KEY, JSON.stringify(state));
-        } catch { }
+        } catch (error) {
+            return;
+        }
     }
 
     function clearState() {
         try {
             sessionStorage.removeItem(SESSION_STATE_KEY);
-        } catch { }
+        } catch (error) {
+            return;
+        }
     }
 
     function shuffle(list) {
@@ -697,7 +708,9 @@
         try {
             localStorage.removeItem(USER_HISTORY_KEY);
             sessionStorage.removeItem(SESSION_USED_KEY);
-        } catch { }
+        } catch (error) {
+            return;
+        }
     }
 
     function getAvailableQuestions() {
@@ -707,7 +720,9 @@
 
     function selectQuestionSet() {
         const available = getAvailableQuestions();
-        if (available.length < MAX_ROUNDS) return null;
+        if (available.length < MAX_ROUNDS) {
+            return null;
+        }
         return shuffle(available).slice(0, MAX_ROUNDS).map((question) => ({
             ...question,
             options: shuffle(question.options),
@@ -737,7 +752,9 @@
         const ranked = dinos
             .map((dino) => ({ id: dino.id, value: state.score[dino.id] || 0 }))
             .sort((left, right) => {
-                if (right.value !== left.value) return right.value - left.value;
+                if (right.value !== left.value) {
+                    return right.value - left.value;
+                }
                 return dinos.findIndex((dino) => dino.id === left.id) - dinos.findIndex((dino) => dino.id === right.id);
             });
 
@@ -750,7 +767,10 @@
 
     function scoreToMarker(ranked) {
         const total = ranked.reduce((sum, row) => sum + row.value, 0);
-        if (!total) return { x: 50, y: 50 };
+
+        if (!total) {
+            return { x: 50, y: 50 };
+        }
 
         let x = 0;
         let y = 0;
@@ -781,10 +801,12 @@
         const winner = getWinner();
         const dino = dinoById[winner.top.id];
         const markerPosition = scoreToMarker(winner.ranked);
+
         renderPentagram(dino.id, markerPosition);
         els.resultName.textContent = dino.name;
         els.resultCopy.textContent = dino.copy;
         els.resultPill.textContent = dino.shortName;
+
         els.resultRegion.classList.remove("is-hidden");
         setGameMeta();
         setStatus(`Result locked: ${dino.name}.`);
@@ -946,6 +968,7 @@
         });
 
         const centerX = x + size / 2;
+
         const starOrder = [0, 2, 4, 1, 3, 0];
 
         ctx.save();
@@ -977,7 +1000,7 @@
             ctx.fillStyle = "#0f1020";
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
-            ctx.font = "28px Apple Color Emoji, 28px Segoe UI Emoji, 28px Noto Color Emoji, sans-serif";
+            ctx.font = "32px Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif";
             ctx.fillText(point.emoji, point.px, point.py - 2);
 
             ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
@@ -1092,7 +1115,7 @@
         try {
             await navigator.clipboard.writeText(`${els.resultName.textContent} - ${window.location.href}`);
             setStatus("Image downloaded and result text copied to clipboard.");
-        } catch {
+        } catch (error) {
             setStatus("Image downloaded. Share it from your downloads folder.");
         }
     }
