@@ -570,6 +570,193 @@
         },
     ];
 
+    // Optional explicit per-category overrides. Add entries when you want a specific
+    // question category to use a custom option array.
+    const questionOptionsByCategory = {
+        "Lunch mission": [
+            { label: "Sprint for the spicy deluxe and eat like a king.", hint: "Big bite, zero hesitation.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Pack the reliable sandwich and vibes stay steady.", hint: "Comfort over chaos.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Share a tray, start the group convo ASAP.", hint: "Social snack energy.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Pick the curated macro bowl like it's study fuel.", hint: "Strategic and efficient.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Salad but make it sneaky satisfying.", hint: "Low-key healthy flex.", score: scoreFor("stegosaurus", "triceratops") },
+        ],
+        "Mystery door": [
+            { label: "Kick the door, see what's up, no regrets.", hint: "Immediate action.", score: scoreFor("trex", "pterodactylus") },
+            { label: "Cautiously peek and make a plan.", hint: "Calculated entry.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Call friends and bring vibes in together.", hint: "Group approach.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Observe patterns then glide through like a pro.", hint: "High perspective.", score: scoreFor("pterodactylus", "trex") },
+            { label: "Stay calm, note exits, then choose quietly.", hint: "Practical caution.", score: scoreFor("stegosaurus", "triceratops") },
+        ],
+        "Group chat": [
+            { label: "Drop a chaotic funny and watch it explode.", hint: "Memes first.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Read, then send a thoughtful reply.", hint: "Measured presence.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Send the wholesome comment that everyone needs.", hint: "Warm glue.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Scout the convo flow before I drop anything.", hint: "Strategic timing.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "React and return later with something useful.", hint: "Low-key influence.", score: scoreFor("stegosaurus", "pterodactylus") },
+        ],
+        "Backpack": [
+            { label: "Protein bar and a plan — instant energy.", hint: "Fuel-first.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Organizer, charger, and a spare pen.", hint: "Reliable kit.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Something for pals — snacks or stickers.", hint: "Share-ready.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "A gadget or two to optimize any moment.", hint: "Utility flex.", score: scoreFor("pterodactylus", "trex") },
+            { label: "A calming notebook and a pen for micro-systems.", hint: "Low-key order.", score: scoreFor("stegosaurus", "triceratops") },
+        ],
+        "Soundtrack": [
+            { label: "An adrenaline playlist that slaps — full send.", hint: "Big energy beats.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Something steady and warm, holds the room.", hint: "Comfort tempo.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Curated vibes that get people talking and dancing.", hint: "Social conductor.", score: scoreFor("parasaurolophus", "trex") },
+            { label: "A thoughtful ambient set to map mood and moves.", hint: "High perspective curation.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Lo-fi efficiency beats — do the thing.", hint: "Calm focus.", score: scoreFor("stegosaurus", "pterodactylus") },
+        ],
+        "Extra sauce": [
+            { label: "Yes, pile it on and make it iconic.", hint: "Bold flavor.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "A little measured drizzle keeps everything safe.", hint: "Balanced.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Share it around — sauce = social currency.", hint: "Generous move.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Analyze the match and add only the optimal note.", hint: "Strategic condiment.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Skip the drama, pick the consistent side.", hint: "Low-key reliable.", score: scoreFor("stegosaurus", "triceratops") },
+        ],
+        "Road trip": [
+            { label: "Drive fast, snack loud, make detours for the story.", hint: "Adventure-first.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Planner with playlists and charging stops mapped.", hint: "Organized comfort.", score: scoreFor("triceratops", "pterodactylus") },
+            { label: "I run the aux and keep the vibes cohesive.", hint: "Social DJ.", score: scoreFor("parasaurolophus", "trex") },
+            { label: "Window seat, map in head, options scanned.", hint: "Aerial navigation.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Slow scenic stops and efficient naps on schedule.", hint: "Steady comfort.", score: scoreFor("stegosaurus", "triceratops") },
+        ],
+        "Desk square": [
+            { label: "Mini chaos but I get everything shipped.", hint: "Doer energy.", score: scoreFor("trex", "pterodactylus") },
+            { label: "Organizer setup — folders, labels, explicit lanes.", hint: "Structure wins.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "A funny plant and something to spark convos.", hint: "Warm presence.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Tools that let me triage problems quickly.", hint: "System-first.", score: scoreFor("pterodactylus", "trex") },
+            { label: "Calm, minimal setup that quietly performs.", hint: "Low-drama efficiency.", score: scoreFor("stegosaurus", "parasaurolophus") },
+        ],
+        "Surprise challenge": [
+            { label: "Jump in and solve it with vibes, not fear.", hint: "Courageous launch.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Stabilize, set limits, and execute steadily.", hint: "Anchor approach.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Ask who else is in and make it collaborative.", hint: "Team-first.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Scan options, pick the best vector, then move.", hint: "Strategic pivot.", score: scoreFor("pterodactylus", "trex") },
+            { label: "Quietly fix the system so it never surprises again.", hint: "Long-game solution.", score: scoreFor("stegosaurus", "triceratops") },
+        ],
+        "Snack theft": [
+            { label: "Steal the boldest snack and flex about it.", hint: "Impulsive flex.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Take the dependable snack nobody misses.", hint: "Safe grab.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Grab one and offer to share like a hero.", hint: "Share move.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Compare choices and pick the mathematically best one.", hint: "Analytical steal.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Take something nutritious and quietly enjoy it.", hint: "Sensible snack.", score: scoreFor("stegosaurus", "pterodactylus") },
+        ],
+        "Room entry": [
+            { label: "Burst in with confidence and own it.", hint: "Main character entrance.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Enter steady, scan the room, take a spot.", hint: "Calm and reliable.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Wave, chat, and make the room warmer.", hint: "Social glue.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Slip in, observe, and choose the best angle.", hint: "Tactical presence.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Find a quiet corner and quietly do your thing.", hint: "Low-key efficient.", score: scoreFor("stegosaurus", "triceratops") },
+        ],
+        "Saturday weather": [
+            { label: "Sun and chaos — do everything, skip sleep.", hint: "Max energy day.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Mild and predictable, perfect for plans.", hint: "Solid routine.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Warm and social — meet people and snack.", hint: "Vibe first.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Cloudy with optimized itinerary and photos.", hint: "Curated calm.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Cool, slow, and restorative.", hint: "Recharge mode.", score: scoreFor("stegosaurus", "parasaurolophus") },
+        ],
+        "Dino sidekick": [
+            { label: "Train it to be loud and dramatic on command.", hint: "Big energy duo.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Teach it manners and reliability.", hint: "Discipline and loyalty.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Let it meet everyone and be social.", hint: "Friendly onboarding.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Map its patterns and deploy it strategically.", hint: "Tactical sidekick.", score: scoreFor("pterodactylus", "trex") },
+            { label: "Keep it calm and reliable for long-term wins.", hint: "Steady training.", score: scoreFor("stegosaurus", "triceratops") },
+        ],
+        "Plan changes": [
+            { label: "Flip the plan fast and hype the pivot.", hint: "Bold adaptation.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Assess and re-anchor the team calmly.", hint: "Stability first.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Check with everyone and keep the vibe.", hint: "Harmonize the change.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Zoom out, pick the best axis, then execute.", hint: "Strategic recalibration.", score: scoreFor("pterodactylus", "trex") },
+            { label: "Quietly rebuild the route so it runs smoother.", hint: "Systemic fix.", score: scoreFor("stegosaurus", "triceratops") },
+        ],
+        "Museum mode": [
+            { label: "Run the tour like it's a flex moment.", hint: "Impressive presence.", score: scoreFor("trex", "pterodactylus") },
+            { label: "Respectful, measured, and quietly in control.", hint: "Quiet guard.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Chat about the exhibits and connect people.", hint: "Social docent.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Observe detail and note the best angles for photos.", hint: "Analytical viewer.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Enjoy slowly and take notes for later.", hint: "Calm appreciation.", score: scoreFor("stegosaurus", "parasaurolophus") },
+        ],
+        "Midnight fridge": [
+            { label: "Raid for the bold snack and celebrate.", hint: "Impulsive delight.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Grab the reliable leftovers and reheat.", hint: "Practical choice.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Make something to share and start a late chat.", hint: "Social midnight.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Pick the optimal combo for energy and return to bed.", hint: "Strategic snack.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Keep it light and calming for sleep later.", hint: "Low-key recovery.", score: scoreFor("stegosaurus", "parasaurolophus") },
+        ],
+        "Hallway vibe": [
+            { label: "Stride like you own the plot.", hint: "Confident walk.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Nod, keep steady, pass with purpose.", hint: "Reliable motion.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Smile and drop a quick hello to warm the path.", hint: "Friendly pulse.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Scan, choose the best path, and glide.", hint: "Tactical pathing.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Move calmly and avoid the noise.", hint: "Low-key flow.", score: scoreFor("stegosaurus", "triceratops") },
+        ],
+        "Lunch table": [
+            { label: "Claim the main chair and make big plans.", hint: "Leader energy.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Make sure everyone has enough and feels safe.", hint: "Anchor at table.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Be the social connector who brings snacks.", hint: "Community hub.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Pick the seat with the best overview and acoustics.", hint: "Strategic seating.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Stay quiet and productive while you eat.", hint: "Focus-first.", score: scoreFor("stegosaurus", "triceratops") },
+        ],
+        "Talking shoes": [
+            { label: "They'd say 'I stomp and make an entrance.'", hint: "Loud footprint.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "They'd say 'I keep you grounded and steady.'", hint: "Stable steps.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "They'd say 'I meet people and start chats.'", hint: "Friendly soles.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "They'd say 'I map routes and find shortcuts.'", hint: "Navigation shoes.", score: scoreFor("pterodactylus", "trex") },
+            { label: "They'd say 'I pick the comfortable, efficient route.'", hint: "Practical footwear.", score: scoreFor("stegosaurus", "triceratops") },
+        ],
+        "Turn signal": [
+            { label: "Ignore it and swerve — bold move.", hint: "Immediate action.", score: scoreFor("trex", "pterodactylus") },
+            { label: "Signal, check, and make the safe move.", hint: "Responsible driver.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Signal early and chat about the route.", hint: "Social navigation.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Plan the turn two steps ahead and execute.", hint: "Strategic steering.", score: scoreFor("pterodactylus", "trex") },
+            { label: "Take the calm lane that gets you there intact.", hint: "Efficient caution.", score: scoreFor("stegosaurus", "triceratops") },
+        ],
+    };
+
+    function getOptionsForStem(stem) {
+        // 1) explicit mapping
+        if (Object.prototype.hasOwnProperty.call(questionOptionsByCategory, stem.category)) {
+            const mapped = questionOptionsByCategory[stem.category];
+            if (Array.isArray(mapped) && mapped.length) return mapped;
+        }
+
+        // 2) exact theme name match (case-insensitive)
+        const exact = optionThemes.find((t) => t.name.toLowerCase() === stem.category.toLowerCase());
+        if (exact && Array.isArray(exact.options)) return exact.options;
+
+        // 3) fuzzy match: theme name contained in category or vice-versa
+        const key = stem.category.toLowerCase();
+        const fuzzy = optionThemes.find((t) => {
+            const name = t.name.toLowerCase();
+            return key.includes(name) || name.includes(key);
+        });
+        if (fuzzy && Array.isArray(fuzzy.options)) return fuzzy.options;
+
+        // 4) prompt keyword matching: pick the theme with the best keyword overlap
+        const promptText = (stem.prompt || "").toLowerCase();
+        let best = null;
+        let bestScore = 0;
+        optionThemes.forEach((theme) => {
+            const nameWords = theme.name.toLowerCase().split(/\s+/);
+            let score = 0;
+            nameWords.forEach((w) => { if (w && promptText.includes(w)) score += 2; });
+            theme.options.forEach((opt) => {
+                const words = opt.label.toLowerCase().split(/\s+/);
+                words.forEach((w) => { if (w && promptText.includes(w)) score += 1; });
+            });
+            if (score > bestScore) {
+                bestScore = score;
+                best = theme;
+            }
+        });
+        if (best && bestScore > 0 && Array.isArray(best.options)) return best.options;
+
+        // 5) fallback to shared responseStyles
+        return responseStyles;
+    }
+
     const app = document.querySelector("[data-whatdino-app]");
 
     if (!app) {
@@ -683,7 +870,7 @@
             id: `${stemIndex}-${slugify(stem.category)}`,
             category: stem.category,
             prompt: stem.prompt,
-            options: shuffle(responseStyles).map((option) => ({ ...option })),
+            options: shuffle(getOptionsForStem(stem)).map((option) => ({ ...option })),
         }));
     }
 
