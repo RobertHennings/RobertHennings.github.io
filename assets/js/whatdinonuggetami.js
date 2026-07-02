@@ -228,6 +228,35 @@
         }
         return score;
     }
+
+    const responseStyles = [
+        {
+            label: "I hit send with main-character confidence.",
+            hint: "Bold, fast, and a little feral.",
+            score: scoreFor("trex", "pterodactylus"),
+        },
+        {
+            label: "I choose the safe option and somehow make it iconic.",
+            hint: "Secure, grounded, and very solid.",
+            score: scoreFor("triceratops", "stegosaurus"),
+        },
+        {
+            label: "I keep it low-drama and highly functional.",
+            hint: "Chill, efficient, and unbothered.",
+            score: scoreFor("stegosaurus", "triceratops"),
+        },
+        {
+            label: "I make the group chat less cursed.",
+            hint: "Warm, social, and carrying the vibe.",
+            score: scoreFor("parasaurolophus", "triceratops"),
+        },
+        {
+            label: "I lurk, clock the situation, then move like I planned it.",
+            hint: "Observant, strategic, and slightly too aware.",
+            score: scoreFor("pterodactylus", "stegosaurus"),
+        },
+    ];
+
     const optionThemes = [
         {
             name: "Action Mode",
@@ -650,12 +679,12 @@
     }
 
     function buildQuestionBank() {
-        return questionStems.flatMap((stem, stemIndex) => optionThemes.map((theme, themeIndex) => ({
-            id: `${stemIndex}-${themeIndex}-${slugify(stem.category)}`,
-            category: `${stem.category} / ${theme.name}`,
+        return questionStems.map((stem, stemIndex) => ({
+            id: `${stemIndex}-${slugify(stem.category)}`,
+            category: stem.category,
             prompt: stem.prompt,
-            options: shuffle(theme.options).map((option) => ({ ...option })),
-        })));
+            options: shuffle(responseStyles).map((option) => ({ ...option })),
+        }));
     }
 
     const questionBank = buildQuestionBank();
@@ -963,15 +992,22 @@
 
         points.forEach((point) => {
             const isWinner = point.id === winnerId;
-            ctx.fillStyle = isWinner ? point.color : "rgba(255, 255, 255, 0.85)";
+            ctx.fillStyle = isWinner ? point.color : "rgba(255, 255, 255, 0.9)";
             ctx.beginPath();
-            ctx.arc(point.px, point.py, isWinner ? 25 : 19, 0, Math.PI * 2);
+            ctx.arc(point.px, point.py, isWinner ? 30 : 24, 0, Math.PI * 2);
             ctx.fill();
 
-            ctx.fillStyle = "#1a1a2e";
-            ctx.font = "700 20px Outfit, sans-serif";
+            ctx.fillStyle = "#0f1020";
             ctx.textAlign = "center";
-            ctx.fillText(point.shortName, point.px, point.py + 42);
+            ctx.textBaseline = "middle";
+            ctx.font = "28px Apple Color Emoji, 28px Segoe UI Emoji, 28px Noto Color Emoji, sans-serif";
+            ctx.fillText(point.emoji, point.px, point.py - 2);
+
+            ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
+            ctx.font = "700 18px Outfit, sans-serif";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "top";
+            ctx.fillText(point.shortName, point.px, point.py + 28);
         });
 
         const markerX = x + (marker.x / 100) * size;
