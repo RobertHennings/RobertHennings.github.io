@@ -675,6 +675,15 @@
         safeWrite(SESSION_USED_KEY, nextSessionHistory, true);
     }
 
+    function resetQuestionHistory() {
+        try {
+            localStorage.removeItem(USER_HISTORY_KEY);
+            sessionStorage.removeItem(SESSION_USED_KEY);
+        } catch (error) {
+            return;
+        }
+    }
+
     function getAvailableQuestions() {
         const usedQuestions = getUsedQuestions();
         return questionBank.filter((question) => !usedQuestions.has(question.id));
@@ -823,17 +832,22 @@
     }
 
     function startRun() {
-        const questionSet = selectQuestionSet();
+        let questionSet = selectQuestionSet();
         showStage(true);
 
         if (!questionSet) {
+            resetQuestionHistory();
+            questionSet = selectQuestionSet();
+        }
+
+        if (!questionSet) {
             els.questionCategory.textContent = "Archive exhausted";
-            els.questionText.textContent = "You have used the full local prompt archive. Clear site storage to restart fresh.";
+            els.questionText.textContent = "Could not build a fresh run right now.";
             els.options.innerHTML = "";
-            setStatus("Not enough unused prompts remain for a full 5-question run.");
+            setStatus("The question archive could not be reset in this browser.");
             showResumeButton(false);
             els.resultRegion.classList.add("is-hidden");
-            els.resultPill.textContent = "Archive full";
+            els.resultPill.textContent = "Unavailable";
             clearState();
             return;
         }
