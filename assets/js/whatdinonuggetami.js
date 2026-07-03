@@ -357,7 +357,7 @@
             { label: "I analyze layouts and optimize the route.", hint: "Spatial strategy.", score: scoreFor("pterodactylus", "stegosaurus") },
             { label: "I avoid unnecessary decisions and streamline everything.", hint: "Efficiency mindset.", score: scoreFor("stegosaurus", "parasaurolophus") }
         ],
-        "": [
+        "You're at a festival. What's your role?": [
             { label: "I jump straight into the action.", hint: "High energy immersion.", score: scoreFor("trex", "parasaurolophus") },
             { label: "I keep track of logistics and safety.", hint: "Grounded stability.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "I stick with people and enhance the group vibe.", hint: "Social glue.", score: scoreFor("parasaurolophus", "triceratops") },
@@ -492,13 +492,6 @@
             { label: "I steer every idea into something fun.", hint: "Expressive and connective.", score: scoreFor("parasaurolophus", "trex") },
             { label: "I float between circles and map the room.", hint: "Strategic and quick.", score: scoreFor("pterodactylus", "triceratops") }
 
-        ],
-        "What does your ideal lunch mission look like?": [
-            { label: "Sprint for the spicy deluxe and eat like a king.", hint: "Big bite, zero hesitation.", score: scoreFor("trex", "parasaurolophus") },
-            { label: "Pack the reliable sandwich and vibes stay steady.", hint: "Comfort over chaos.", score: scoreFor("triceratops", "stegosaurus") },
-            { label: "Share a tray, start the group convo ASAP.", hint: "Social snack energy.", score: scoreFor("parasaurolophus", "triceratops") },
-            { label: "Pick the curated macro bowl like it's study fuel.", hint: "Strategic and efficient.", score: scoreFor("pterodactylus", "stegosaurus") },
-            { label: "Salad but make it sneaky satisfying.", hint: "Low-key healthy flex.", score: scoreFor("stegosaurus", "triceratops") },
         ],
         "What does your ideal lunch mission look like?": [
             { label: "Sprint for the spicy deluxe and eat like a king.", hint: "Big bite, zero hesitation.", score: scoreFor("trex", "parasaurolophus") },
@@ -642,23 +635,191 @@
         ],
     };
 
+
+    // Maps questionStems prompts to QUESTION_OPTIONS keys when wording differs.
+    const PROMPT_OPTION_ALIASES = {
+        "A cashier offers extra sauce. Your reaction?": "What is your approach to adding extra sauce to a dish?",
+        "A conversation stalls awkwardly. You...": "How do you handle silence in a group setting?",
+        "A conversation suddenly goes quiet. You...": "How do you handle silence in a group setting?",
+        "A conversation suddenly pauses. You...": "How do you handle silence in a group setting?",
+        "A friend asks for your help moving a couch. You...": "What's your role on a road trip?",
+        "A friend cancels plans last minute. You...": "How do you react when plans suddenly change?",
+        "A friend is late. How do you handle the wait?": "When you have to wait at least 5 minutes somewhere",
+        "A group can't decide. What role do you take?": "In complete Chaos",
+        "A group conversation suddenly goes quiet. You...": "How do you handle silence in a group setting?",
+        "A group photo is being taken. What is your role?": "Your social mode",
+        "A mystery door opens. What do you do first?": "What is your approach to a mystery door?",
+        "A pizza arrives. How do you approach it?": "You have to choose a snack",
+        "A plan forms in your mind instantly. You...": "How do you approach a problem that requires creativity?",
+        "A random idea hits you mid-day. What next?": "How do you approach a problem that requires creativity?",
+        "A random idea hits you out of nowhere. You...": "How do you approach a problem that requires creativity?",
+        "A shared playlist is getting weird. You...": "What would your perfect soundtrack sound like?",
+        "An idea hits you mid-routine. You...": "How do you approach a problem that requires creativity?",
+        "Choose your museum behavior.": "What's your style when visiting a museum?",
+        "Everything feels too loud and busy. You...": "When you are highly overstimulated",
+        "Everything feels too loud. You...": "When you are highly overstimulated",
+        "Everything suddenly goes quiet. You...": "How do you handle silence in a group setting?",
+        "How do you approach a surprise challenge?": "How do you react to a surprise challenge?",
+        "How do you behave on a shared playlist?": "What would your perfect soundtrack sound like?",
+        "How do you enter a group chat?": "You enter a new group chat",
+        "How do you enter a room?": "How do you usually enter a room full of people?",
+        "How do you handle a turn signal?": "How do you usually approach making a turn while driving?",
+        "How do you plan a weekend with zero pressure?": "Your Couch Mode",
+        "How do you survive a midnight fridge raid?": "It's midnight and you're hungry. What do you reach for?",
+        "How do you usually end your day?": "Your Couch Mode",
+        "How does your morning usually begin?": "Your usual 2AM Mode",
+        "It starts raining right as you leave. What's your response?": "when it rains",
+        "It's 2AM and you're awake. What are you doing?": "Your usual 2AM Mode",
+        "No one can decide. You...": "In complete Chaos",
+        "No one in the group can decide what to do. You...": "In complete Chaos",
+        "Pick the chair you claim immediately.": "How do you usually enter a room full of people?",
+        "Pick your ideal seat on a bus or train.": "How do you approach sitting in a Bus?",
+        "Pick your soundtrack for a tiny quest.": "What would your perfect soundtrack sound like?",
+        "Plans suddenly change. What's your response?": "When plans unexpectedly change",
+        "Rain starts right as you leave. What's your move?": "when it rains",
+        "Rain starts suddenly. What do you do?": "when it rains",
+        "Someone compliments you out of nowhere. You...": "Your social mode",
+        "Someone compliments you unexpectedly. You...": "Your social mode",
+        "Someone compliments you unexpectedly. Your reaction?": "Your social mode",
+        "Someone drops a task on you last minute. You...": "In complete Chaos",
+        "Someone gives you a task out of nowhere. You...": "In complete Chaos",
+        "Someone hands you a sticker sheet. What happens?": "What goes in your backpack?",
+        "Someone invites you somewhere last minute. You...": "How do you react when plans suddenly change?",
+        "Someone leaves you on read. You...": "How do you usually behave in a group chat?",
+        "Someone offers you food. What's your reaction?": "You have to choose a snack",
+        "Someone suddenly proposes a toast. You...": "Your social mode",
+        "Something works better than expected. You...": "In complete Chaos",
+        "The checkout line is chaotic. You...": "You are standing in a long queue",
+        "The day is ending and you reflect. You...": "Your Couch Mode",
+        "The elevator briefly stops between floors. You...": "You are standing in an elevator",
+        "The group energy doesn't match yours. You...": "Your social mode",
+        "The group vibe doesn't match you. You...": "Your social mode",
+        "The line you're in suddenly stops moving. You...": "You are standing in a long queue",
+        "The queue suddenly pauses for a long time. You...": "You are standing in a long queue",
+        "There is one snack left. What do you do?": "When its on you to choose the first snack",
+        "Too many choices. You start to...": "In complete Chaos",
+        "Too many options. What's your move?": "In complete Chaos",
+        "What do you do when the plan changes?": "How do you react when plans suddenly change?",
+        "What does your ideal text reply style look like?": "How do you usually behave in a group chat?",
+        "What energy do you bring to a road trip?": "What's your role on a road trip?",
+        "What is your energy when a deadline gets real?": "Your office mode",
+        "What is your ideal Saturday weather?": "What kind of Saturday weather matches your vibe?",
+        "What is your lunch table role?": "What's your role at the lunch table?",
+        "What is your strategy for a last-minute study sprint?": "Your office mode",
+        "What kind of snack tray are you?": "You have to choose a snack",
+        "What's your natural state in a library?": "How do you usually enter a room full of people?",
+        "Which item actually lives in your backpack?": "What goes in your backpack?",
+        "Which snack are you most likely to steal?": "If you had to steal a snack, what's your strategy?",
+        "Which vibe do you radiate in a hallway?": "What's your typical hallway vibe?",
+        "You and a friend go quiet at the same time. You...": "How do you handle silence in a group setting?",
+        "You are assigned a dinosaur sidekick. How do you train it?": "If you had a dinosaur sidekick, what would you do with it?",
+        "You arrive and the group is already split. You...": "Your social mode",
+        "You arrive at a birthday party. What do you do first?": "You just arrived at a Birthday party",
+        "You arrive late to a group hangout. What happens?": "You just arrived at a Birthday party",
+        "You arrive somewhere completely soaked. You...": "when it rains",
+        "You bump into someone unexpectedly. You...": "Your social mode",
+        "You can't find something important. You...": "You lost something important to you somewhere on the way",
+        "You choose your seat on public transport based on...": "How do you approach sitting in a Bus?",
+        "You decide it's time to leave. You...": "How do you handle leaving a group setting?",
+        "You enter IKEA with no list. What's your strategy?": "You go to IKEA visiting routine",
+        "You enter a bus with many seats available. You...": "How do you approach sitting in a Bus?",
+        "You enter a caf\u00e9. What happens first?": "In a Cafe",
+        "You enter a hotel room. What's your first action?": "When you visit a Hotel you have never been to",
+        "You enter a hotel room. What's your first move?": "When you visit a Hotel you have never been to",
+        "You enter a room with multiple chairs. Which do you pick?": "How do you usually enter a room full of people?",
+        "You enter a room with multiple seats. How do you choose?": "How do you usually enter a room full of people?",
+        "You get a strong idea out of nowhere. You...": "How do you approach a problem that requires creativity?",
+        "You get an unexpected invite. What happens next?": "How do you react when plans suddenly change?",
+        "You get hungry at midnight. What happens?": "It's midnight and you're hungry. What do you reach for?",
+        "You get invited somewhere last minute. You...": "How do you react when plans suddenly change?",
+        "You get invited somewhere last minute. Your reaction?": "How do you react when plans suddenly change?",
+        "You get on a bus. Where do you sit and why?": "How do you approach sitting in a Bus?",
+        "You go for a walk at night. What happens?": "When you are about to leave for a night-walk",
+        "You have a long train ride ahead. What do you do?": "When you are travelling",
+        "You have ten minutes between lectures. What do you do?": "On Campus",
+        "You join an active group chat. What do you do first?": "You enter a new group chat",
+        "You lose focus mid-task. You...": "When you feel your energy dip",
+        "You lose something important. What's your first move?": "You lost something important to you somewhere on the way",
+        "You lose track of a conversation topic. You...": "How do you handle silence in a group setting?",
+        "You must decide something instantly. What do you do?": "In complete Chaos",
+        "You open a door and hesitate. Why?": "What is your approach to a mystery door?",
+        "You open a kitchen cabinet with no plan. What happens?": "You have to choose a snack",
+        "You open a random kitchen cabinet. What's your behavior?": "You have to choose a snack",
+        "You open the kitchen cabinet. What are you looking for?": "You have to choose a snack",
+        "You open the kitchen. How do you choose a snack?": "You have to choose a snack",
+        "You realize you took the wrong direction. What now?": "When you are travelling",
+        "You sit at a shared table alone. What happens?": "How do you usually enter a room full of people?",
+        "You sit at a shared table alone. You...": "How do you usually enter a room full of people?",
+        "You sit down on a couch with no plans. What happens?": "Your Couch Mode",
+        "You start overthinking something small. You...": "How do you approach a problem that requires creativity?",
+        "You step onto a bus or train. Where do you go?": "How do you approach sitting in a Bus?",
+        "You suddenly feel like changing your room setup. You...": "What does your workspace usually look like?",
+        "You suddenly have 3 free hours. You...": "Your Couch Mode",
+        "You suddenly have time in the middle of the day. You...": "Your Couch Mode",
+        "You unexpectedly get one free hour. You...": "Your Couch Mode",
+        "You wake up later than planned. What happens?": "Your usual 2AM Mode",
+        "You wake up with no plans. What now?": "Your Couch Mode",
+        "You walk into a birthday party. What happens first?": "You just arrived at a Birthday party",
+        "You walk into a room and everyone is quiet. You...": "How do you handle silence in a group setting?",
+        "You want a snack late at night. You...": "It's midnight and you're hungry. What do you reach for?",
+        "You want to leave a place. You make sure to...": "How do you handle leaving a group setting?",
+        "You're at a festival. What's your role?": "You're at a festival. What's your role?",
+        "You're at checkout and there's a delay. You...": "You are standing in a long queue",
+        "You're at the airport early. What do you do?": "On an Airport you",
+        "You're in a crowded social space. What's your instinct?": "Your social mode",
+        "You're in a food court. How do you decide?": "You have to choose a snack",
+        "You're in a long queue. How do you behave?": "You are standing in a long queue",
+        "You're in a shared public space. What's your vibe?": "How do you usually enter a room full of people?",
+        "You're in a supermarket with no list. What's your strategy?": "In the supermarket",
+        "You're in charge of music for a group. What do you do?": "What would your perfect soundtrack sound like?",
+        "You're in control of music. What's your approach?": "What would your perfect soundtrack sound like?",
+        "You're on your way somewhere and detour. You...": "When you are travelling",
+        "You're out on a night walk. What's your vibe?": "When you are about to leave for a night-walk",
+        "You're ready to leave a place. How do you exit?": "How do you handle leaving a group setting?",
+        "You're ready to leave somewhere. How do you exit?": "How do you handle leaving a group setting?",
+        "You're stuck in an elevator with strangers. What do you do?": "You are standing in an elevator",
+        "You're stuck waiting somewhere. What do you do?": "When you have to wait at least 5 minutes somewhere",
+        "You're waiting for someone who's late. What do you do?": "When you have to wait at least 5 minutes somewhere",
+        "You're walking down a hallway. What's your vibe?": "What's your typical hallway vibe?",
+        "You're wandering a supermarket with no goal. What happens?": "In the supermarket",
+        "Your bus/train is crowded and noisy. You...": "How do you approach sitting in a Bus?",
+        "Your desk has one free square. What goes there?": "What does your workspace usually look like?",
+        "Your food takes too long to arrive. You...": "When you have to wait at least 5 minutes somewhere",
+        "Your mood suddenly changes mid-situation. You...": "When you feel your energy dip",
+        "Your phone is blowing up. You...": "How do you usually behave in a group chat?",
+        "Your phone is constantly buzzing. You...": "How do you usually behave in a group chat?",
+        "Your phone lights up with messages. Your reaction?": "How do you usually behave in a group chat?",
+        "Your plans get delayed by hours. You...": "How do you react when plans suddenly change?",
+        "Your social energy drops mid-event. You...": "When you feel your energy dip",
+        "Your social energy suddenly dips. You...": "When you feel your energy dip",
+        "Your workspace is messy. What do you do?": "What does your workspace usually look like?",
+    };
+
+    function resolveOptionsKey(stem) {
+        if (QUESTION_OPTIONS[stem.prompt]) {
+            return stem.prompt;
+        }
+
+        const alias = PROMPT_OPTION_ALIASES[stem.prompt];
+        if (alias && QUESTION_OPTIONS[alias]) {
+            return alias;
+        }
+
+        if (QUESTION_OPTIONS[stem.category]) {
+            return stem.category;
+        }
+
+        return null;
+    }
+
     function getOptionsForStem(stem) {
-        // Try prompt first (this is what you defined in QUESTION_OPTIONS)
-        const byPrompt = QUESTION_OPTIONS[stem.prompt];
-        if (Array.isArray(byPrompt) && byPrompt.length) {
-            return byPrompt;
+        const optionsKey = resolveOptionsKey(stem);
+        const resolved = optionsKey ? QUESTION_OPTIONS[optionsKey] : null;
+        if (Array.isArray(resolved) && resolved.length) {
+            return resolved;
         }
-
-        // Optional: also allow category-keyed dict entries
-        const byCategory = QUESTION_OPTIONS[stem.category];
-        if (Array.isArray(byCategory) && byCategory.length) {
-            return byCategory;
-        }
-
-        // If there is no direct pair defined, fail fast instead of using themes.
-        throw new Error(
-            `Missing QUESTION_OPTIONS entry for: ${stem.prompt} (category: ${stem.category})`
-        );
+        // Generic fallback keeps the archive playable while custom options are added.
+        return responseStyles;
     }
 
     // Expose full mapping to window for inspection and copying to source.
@@ -845,13 +1006,12 @@
     function selectQuestionSet() {
         const available = getAvailableQuestions();
 
-        // If fewer than MAX_ROUNDS are available, just use whatever is there.
         const sliceSize = Math.min(available.length, MAX_ROUNDS);
         if (sliceSize === 0) {
-            return null; // truly no questions at all
+            return null;
         }
 
-        const questionSet = available.slice(0, sliceSize).map((question) => ({
+        const questionSet = shuffle(available).slice(0, sliceSize).map((question) => ({
             ...question,
             options: question.options.map((opt) => ({ ...opt })),
         }));
