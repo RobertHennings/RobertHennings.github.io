@@ -844,11 +844,14 @@
 
     function selectQuestionSet() {
         const available = getAvailableQuestions();
-        if (available.length < MAX_ROUNDS) return null;
 
-        // Deterministic selection: take the first MAX_ROUNDS available questions,
-        // preserving their fixed options mapping from QUESTION_OPTIONS.
-        const questionSet = available.slice(0, MAX_ROUNDS).map((question) => ({
+        // If fewer than MAX_ROUNDS are available, just use whatever is there.
+        const sliceSize = Math.min(available.length, MAX_ROUNDS);
+        if (sliceSize === 0) {
+            return null; // truly no questions at all
+        }
+
+        const questionSet = available.slice(0, sliceSize).map((question) => ({
             ...question,
             options: question.options.map((opt) => ({ ...opt })),
         }));
