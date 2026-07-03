@@ -833,7 +833,7 @@
     }
 
     function getAvailableQuestions() {
-        // Ignore used-history; always use full question bank
+        // Ignore history; always use full question bank
         return questionBank;
     }
 
@@ -846,10 +846,11 @@
         const available = getAvailableQuestions();
         if (available.length < MAX_ROUNDS) return null;
 
-        // Deterministic selection: take the first MAX_ROUNDS, no shuffling
-        const questionSet = available.slice(0, MAX_ROUNDS).map(question => ({
+        // Deterministic selection: take the first MAX_ROUNDS available questions,
+        // preserving their fixed options mapping from QUESTION_OPTIONS.
+        const questionSet = available.slice(0, MAX_ROUNDS).map((question) => ({
             ...question,
-            options: question.options.map(opt => ({ ...opt })),
+            options: question.options.map((opt) => ({ ...opt })),
         }));
 
         return questionSet;
