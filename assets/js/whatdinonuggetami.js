@@ -783,11 +783,11 @@
 
     function buildQuestionBank() {
         return questionStems.map((stem, stemIndex) => ({
-            id: `${stemIndex}-${slugify(stem.category)}`,
+            id: `${stemIndex}-${slugify(stem.category || "")}`,
             category: stem.category,
             prompt: stem.prompt,
-            // Use a fixed, deterministic options array for each stem.
-            options: getOptionsForStem(stem).map((option) => ({ ...option })),
+            // Use only dict-based options
+            options: getOptionsForStem(stem).map(option => ({ ...option })),
         }));
     }
 
@@ -833,17 +833,19 @@
     }
 
     function getAvailableQuestions() {
-        const usedQuestions = getUsedQuestions();
-        return questionBank.filter((question) => !usedQuestions.has(question.id));
+        const usedIds = safeRead(SESSION_USED_KEY);
+        // If you want to avoid repeats across sessions:
+        return questionBank.filter(q => !usedIds.includes(q.id));
+        // Or if you don't care about history, simply:
+        // return questionBank;
     }
 
     function selectQuestionSet() {
         const available = getAvailableQuestions();
-        if (available.length < MAXROUNDS) return null;
+        if (available.length < MAX_ROUNDS) return null;
 
-        // Deterministic selection: take the first MAXROUNDS available questions,
-        // preserving their fixed options mapping from QUESTIONOPTIONS.
-        const questionSet = available.slice(0, MAXROUNDS).map(question => ({
+        // Deterministic selection: take the first MAX_ROUNDS, no shuffling
+        const questionSet = available.slice(0, MAX_ROUNDS).map(question => ({
             ...question,
             options: question.options.map(opt => ({ ...opt })),
         }));
