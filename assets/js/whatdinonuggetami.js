@@ -643,69 +643,28 @@
     };
 
     function getOptionsForStem(stem) {
-        // 1) explicit mapping (direct dict lookup by category or exact prompt)
-        if (Object.prototype.hasOwnProperty.call(QUESTION_OPTIONS, stem.category)) {
-            const mapped = QUESTION_OPTIONS[stem.category];
-            if (Array.isArray(mapped) && mapped.length) return mapped;
-        }
-        if (Object.prototype.hasOwnProperty.call(QUESTION_OPTIONS, stem.prompt)) {
-            const mapped = QUESTION_OPTIONS[stem.prompt];
-            if (Array.isArray(mapped) && mapped.length) return mapped;
+        // Try prompt first (this is what you defined in QUESTION_OPTIONS)
+        const byPrompt = QUESTION_OPTIONS[stem.prompt];
+        if (Array.isArray(byPrompt) && byPrompt.length) {
+            return byPrompt;
         }
 
-        // 2) exact theme name match (case-insensitive)
-        const exact = optionThemes.find((t) => t.name.toLowerCase() === stem.category.toLowerCase());
-        if (exact && Array.isArray(exact.options)) return exact.options;
+        // Optional: also allow category-keyed dict entries
+        const byCategory = QUESTION_OPTIONS[stem.category];
+        if (Array.isArray(byCategory) && byCategory.length) {
+            return byCategory;
+        }
 
-        // 3) fuzzy match: theme name contained in category or vice-versa
-        const key = stem.category.toLowerCase();
-        const fuzzy = optionThemes.find((t) => {
-            const name = t.name.toLowerCase();
-            return key.includes(name) || name.includes(key);
-        });
-        if (fuzzy && Array.isArray(fuzzy.options)) return fuzzy.options;
-
-        // 4) prompt keyword matching: pick the theme with the best keyword overlap
-        const promptText = (stem.prompt || "").toLowerCase();
-        let best = null;
-        let bestScore = 0;
-        optionThemes.forEach((theme) => {
-            const nameWords = theme.name.toLowerCase().split(/\s+/);
-            let score = 0;
-            nameWords.forEach((w) => { if (w && promptText.includes(w)) score += 2; });
-            theme.options.forEach((opt) => {
-                const words = opt.label.toLowerCase().split(/\s+/);
-                words.forEach((w) => { if (w && promptText.includes(w)) score += 1; });
-            });
-            if (score > bestScore) {
-                bestScore = score;
-                best = theme;
-            }
-        });
-        if (best && bestScore > 0 && Array.isArray(best.options)) return best.options;
-
-        // 5) fallback to shared responseStyles
-        return responseStyles;
-    }
-
-    // Ensure every question prompt has a direct prompt-keyed entry in QUESTION_OPTIONS.
-    try {
-        questionStems.forEach((stem) => {
-            try {
-                if (!Object.prototype.hasOwnProperty.call(QUESTION_OPTIONS, stem.prompt)) {
-                    QUESTION_OPTIONS[stem.prompt] = getOptionsForStem(stem);
-                }
-            } catch (e) {
-                // ignore mapping errors per prompt
-            }
-        });
-    } catch (e) {
-        // noop
+        // If there is no direct pair defined, fail fast instead of using themes.
+        throw new Error(
+            `Missing QUESTION_OPTIONS entry for: ${stem.prompt} (category: ${stem.category})`
+        );
     }
 
     // Expose full mapping to window for inspection and copying to source.
-    // Open browser console and run: copy(JSON.stringify(window.WHATDINO_FULL_OPTIONS, null, 2))
-    // to copy all question→options mappings as code you can paste into QUESTION_OPTIONS object literal.
+    // Open browser console and run:
+    //   copy(JSON.stringify(window.WHATDINO_FULL_OPTIONS, null, 2))
+    // to copy all question→options mappings as code you can paste into QUESTION_OPTIONS.
     try {
         if (typeof window !== "undefined") {
             window.WHATDINO_FULL_OPTIONS = QUESTION_OPTIONS;
@@ -880,14 +839,16 @@
 
     function selectQuestionSet() {
         const available = getAvailableQuestions();
-        if (available.length < MAX_ROUNDS) {
-            return null;
-        }
-        // Select random questions but do NOT shuffle or reassign options.
-        return shuffle(available).slice(0, MAX_ROUNDS).map((question) => ({
+        if (available.length < MAXROUNDS) return null;
+
+        // Deterministic selection: take the first MAXROUNDS available questions,
+        // preserving their fixed options mapping from QUESTIONOPTIONS.
+        const questionSet = available.slice(0, MAXROUNDS).map(question => ({
             ...question,
-            options: question.options.map((opt) => ({ ...opt })),
+            options: question.options.map(opt => ({ ...opt })),
         }));
+
+        return questionSet;
     }
 
     function setStatus(message) {
