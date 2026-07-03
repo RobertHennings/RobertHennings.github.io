@@ -268,445 +268,372 @@
                 { label: "Quietly optimize everything in the background.", hint: "Calm with hidden spikes.", score: scoreFor("stegosaurus", "parasaurolophus") },
             ],
         },
-        {
-            name: "Social Mode",
-            options: [
-                { label: "I become the hype engine.", hint: "Loud, playful, magnetic.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I make sure everyone gets home safe.", hint: "Steady and dependable.", score: scoreFor("triceratops", "parasaurolophus") },
-                { label: "I host the side conversation that saves the night.", hint: "Warm and quietly iconic.", score: scoreFor("stegosaurus", "parasaurolophus") },
-                { label: "I steer every idea into something fun.", hint: "Expressive and connective.", score: scoreFor("parasaurolophus", "trex") },
-                { label: "I float between circles and map the room.", hint: "Strategic and quick.", score: scoreFor("pterodactylus", "triceratops") },
-            ],
-        },
-        {
-            name: "Travel Mode",
-            options: [
-                { label: "No map. Just appetite and speed.", hint: "Fearless detours.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "Checklist, backup plan, charger, done.", hint: "Prepared and sturdy.", score: scoreFor("triceratops", "pterodactylus") },
-                { label: "Scenic route and zero rush.", hint: "Comfort over chaos.", score: scoreFor("stegosaurus", "triceratops") },
-                { label: "Playlist curator and vibes director.", hint: "Harmonize the whole crew.", score: scoreFor("parasaurolophus", "stegosaurus") },
-                { label: "Window seat with full aerial strategy.", hint: "Top-down thinking.", score: scoreFor("pterodactylus", "trex") },
-            ],
-        },
-        {
-            name: "Desk Mode",
-            options: [
-                { label: "Three tabs, one deadline, all gas.", hint: "Bold execution.", score: scoreFor("trex", "pterodactylus") },
-                { label: "Color-coded tasks and clear owners.", hint: "Structure wins.", score: scoreFor("triceratops", "parasaurolophus") },
-                { label: "A tidy notebook and surgical focus.", hint: "Calm precision.", score: scoreFor("stegosaurus", "pterodactylus") },
-                { label: "Voice memo brainstorm and team sync.", hint: "Communicate, then accelerate.", score: scoreFor("parasaurolophus", "trex") },
-                { label: "Prototype first, explain later.", hint: "High-altitude iteration.", score: scoreFor("pterodactylus", "stegosaurus") },
-            ],
-        },
-        {
-            name: "Campus Mode",
-            options: [
-                { label: "I speed-walk like I am late to destiny.", hint: "Fast, direct, slightly chaotic.", score: scoreFor("trex", "pterodactylus") },
-                { label: "I check the schedule and protect my energy.", hint: "Grounded and cautious.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I find the friends-first route and make it easy.", hint: "Warm and practical.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I take the scenic path and notice everything.", hint: "Observant and elevated.", score: scoreFor("pterodactylus", "parasaurolophus") },
-                { label: "I create a tiny system so nothing derails.", hint: "Calm, organized, efficient.", score: scoreFor("stegosaurus", "triceratops") },
-            ],
-        },
-        {
-            name: "Chaos Mode",
-            options: [
-                { label: "I commit instantly and trust the plot.", hint: "Bold under pressure.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I anchor the situation and slow the room down.", hint: "Stability first.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I turn the mess into something oddly cozy.", hint: "Soft power.", score: scoreFor("parasaurolophus", "stegosaurus") },
-                { label: "I step back, assess, and pick the smartest exit.", hint: "Wide-angle thinking.", score: scoreFor("pterodactylus", "trex") },
-                { label: "I fix the system so the chaos cannot return.", hint: "Quietly decisive.", score: scoreFor("stegosaurus", "triceratops") },
-            ],
-        },
-        {
-            name: "Café Mode",
-            options: [
-                { label: "I scan the room and choose a strategic seat first.", hint: "Observation before action.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I order fast and adapt as I go.", hint: "Momentum first.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I wait for everyone else to feel comfortable first.", hint: "Social grounding.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I pick the quiet corner and settle in immediately.", hint: "Calm control.", score: scoreFor("stegosaurus", "triceratops") },
-                { label: "I notice everything but pretend I'm not analyzing it.", hint: "Hidden awareness.", score: scoreFor("pterodactylus", "trex") },
-            ],
-        },
-        {
-            name: "Lost Mode",
-            options: [
-                { label: "I immediately start searching in motion.", hint: "Action reduces uncertainty.", score: scoreFor("trex", "pterodactylus") },
-                { label: "I retrace steps carefully and systematically.", hint: "Structure first.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I ask others and turn it into a shared problem.", hint: "Collaborative recovery.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I pause and map the situation mentally.", hint: "Big-picture thinking.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I assume it will reappear and optimize waiting.", hint: "Calm efficiency.", score: scoreFor("stegosaurus", "parasaurolophus") },
-            ],
-        },
-        {
-            name: "Elevator Mode",
-            options: [
-                { label: "I break the silence with energy or humor.", hint: "Social spark.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I respectfully stay quiet and stable.", hint: "Grounded presence.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I make small friendly interactions if needed.", hint: "Soft social control.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I observe everyone subtly without engaging.", hint: "Analytical awareness.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I focus on exit timing and efficiency.", hint: "Exit optimization.", score: scoreFor("stegosaurus", "pterodactylus") },
-            ],
-        },
-        {
-            name: "Snack Mode",
-            options: [
-                { label: "I grab the most exciting thing instantly.", hint: "Impulse-driven choice.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I pick the reliable classic snack.", hint: "Consistency wins.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I ask if anyone wants to share first.", hint: "Group-aware behavior.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I compare options before deciding carefully.", hint: "Deliberate selection.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I optimize for long-term satisfaction, not impulse.", hint: "Strategic choice.", score: scoreFor("stegosaurus", "pterodactylus") },
-            ],
-        },
-        {
-            name: "Queue Mode",
-            options: [
-                { label: "I stay alert and find opportunities to move faster.", hint: "Restless energy.", score: scoreFor("trex", "pterodactylus") },
-                { label: "I accept the wait and stay organized.", hint: "Structured patience.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I chat with nearby people if it feels right.", hint: "Social flow.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I observe patterns in how the queue moves.", hint: "System awareness.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I mentally detach and optimize comfort.", hint: "Calm endurance.", score: scoreFor("stegosaurus", "parasaurolophus") },
-            ],
-        },
-        {
-            name: "Group Chat Mode",
-            options: [
-                { label: "I jump in immediately with energy or memes.", hint: "Fast social ignition.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I read everything first before responding.", hint: "Structured awareness.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I react to the vibe and ease into it.", hint: "Social harmony.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I observe patterns before I say anything.", hint: "Analytical entry.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I wait for the right moment to drop something useful.", hint: "Timing optimization.", score: scoreFor("stegosaurus", "pterodactylus") },
-            ],
-        },
-        {
-            name: "Rain Mode",
-            options: [
-                { label: "I embrace it and keep moving anyway.", hint: "Unbothered momentum.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I immediately adjust plans and stay dry.", hint: "Risk control.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I slow down and enjoy the change of atmosphere.", hint: "Soft adaptation.", score: scoreFor("parasaurolophus", "stegosaurus") },
-                { label: "I analyze the best route or shelter options.", hint: "Strategic thinking.", score: scoreFor("pterodactylus", "triceratops") },
-                { label: "I optimize comfort and treat it as a pause.", hint: "Efficient rest.", score: scoreFor("stegosaurus", "parasaurolophus") },
-            ],
-        },
-        {
-            name: "Supermarket Mode",
-            options: [
-                { label: "I wander and grab whatever looks good.", hint: "Impulse exploration.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I stick to a mental or written plan.", hint: "Controlled structure.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I consider what others might want too.", hint: "Social awareness.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I compare options carefully before choosing.", hint: "Analytical selection.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I optimize route efficiency through the aisles.", hint: "System efficiency.", score: scoreFor("stegosaurus", "pterodactylus") },
-            ],
-        },
-        {
-            name: "Waiting Mode",
-            options: [
-                { label: "I find something else to do immediately.", hint: "Active restlessness.", score: scoreFor("trex", "pterodactylus") },
-                { label: "I stay patient and structured.", hint: "Stable waiting.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I start a small conversation if possible.", hint: "Social filler.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I observe everything happening around me.", hint: "Environmental scanning.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I mentally detach and conserve energy.", hint: "Efficient patience.", score: scoreFor("stegosaurus", "parasaurolophus") },
-            ],
-        },
-        {
-            name: "Plan Change Mode",
-            options: [
-                { label: "I adapt instantly and move forward.", hint: "Momentum adaptation.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I check what changes and re-stabilize.", hint: "Structured response.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I make sure everyone is still aligned.", hint: "Group harmony.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I reassess the situation from above.", hint: "Big-picture recalibration.", score: scoreFor("pterodactylus", "trex") },
-                { label: "I quietly rebuild the plan more efficiently.", hint: "System optimization.", score: scoreFor("stegosaurus", "pterodactylus") },
-            ],
-        },
-        {
-            name: "Airport Mode",
-            options: [
-                { label: "I explore every corner and stay active.", hint: "Restless momentum.", score: scoreFor("trex", "pterodactylus") },
-                { label: "I find a gate and settle into a structured wait.", hint: "Controlled patience.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I observe people and stay socially aware.", hint: "Soft social mapping.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I scan the entire layout and optimize movement.", hint: "System overview.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I minimize stress and conserve energy.", hint: "Efficient calm.", score: scoreFor("stegosaurus", "parasaurolophus") },
-            ],
-        },
-        {
-            name: "Couch Mode",
-            options: [
-                { label: "I start doing things immediately from the couch.", hint: "Action doesn't wait.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I settle in properly and organize comfort.", hint: "Structured relaxation.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I end up talking or co-existing with others nearby.", hint: "Social warmth.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I drift into observation or planning.", hint: "Reflective thinking.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I fully optimize comfort and stay there.", hint: "Efficient stillness.", score: scoreFor("stegosaurus", "parasaurolophus") },
-            ],
-        },
-        {
-            name: "Festival Mode",
-            options: [
-                { label: "I jump straight into the action.", hint: "High energy immersion.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I keep track of logistics and safety.", hint: "Grounded stability.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I stick with people and enhance the group vibe.", hint: "Social glue.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I move strategically between stages and moments.", hint: "Big-picture navigation.", score: scoreFor("pterodactylus", "trex") },
-                { label: "I find calm zones and manage energy carefully.", hint: "Energy optimization.", score: scoreFor("stegosaurus", "parasaurolophus") },
-            ],
-        },
-        {
-            name: "IKEA Mode",
-            options: [
-                { label: "I roam freely and discover things as I go.", hint: "Explorative instinct.", score: scoreFor("trex", "pterodactylus") },
-                { label: "I follow the path and stick to structure.", hint: "System compliance.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I turn it into a shared experience.", hint: "Social journey.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I analyze layouts and optimize the route.", hint: "Spatial strategy.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I avoid unnecessary decisions and streamline everything.", hint: "Efficiency mindset.", score: scoreFor("stegosaurus", "parasaurolophus") },
-            ],
-        },
-        {
-            name: "2AM Mode",
-            options: [
-                { label: "I get random bursts of energy and start doing things.", hint: "Unstable momentum.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I try to stabilize and go back to routine.", hint: "Restoration instinct.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I message someone or connect quietly.", hint: "Soft connection.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I think deeply about everything at once.", hint: "Wide mental scope.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I minimize stimulation and try to reset.", hint: "System cooldown.", score: scoreFor("stegosaurus", "parasaurolophus") },
-            ],
-        },
-        {
-            name: "Birthday Mode",
-            options: [
-                { label: "I immediately join the action and greet everyone.", hint: "Fast social ignition.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I find my place and settle into the structure of the room.", hint: "Grounded entry.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I connect with people one by one naturally.", hint: "Social flow.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I scan the room and map the social dynamics.", hint: "Observational awareness.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I observe first and engage when it feels right.", hint: "Energy efficiency.", score: scoreFor("stegosaurus", "pterodactylus") },
-            ],
-        },
-        {
-            name: "Hotel Mode",
-            options: [
-                { label: "I explore every corner immediately.", hint: "Curiosity-driven action.", score: scoreFor("trex", "pterodactylus") },
-                { label: "I unpack and organize everything right away.", hint: "Structure and control.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I make the space comfortable for everyone involved.", hint: "Soft social awareness.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I analyze the layout and optimize usage.", hint: "System thinking.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I immediately relax and reduce stimulation.", hint: "Efficiency in rest.", score: scoreFor("stegosaurus", "parasaurolophus") },
-            ],
-        },
-        {
-            name: "Night Walk Mode",
-            options: [
-                { label: "I walk with energy and change direction often.", hint: "Active momentum.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I stick to familiar routes and stay aware.", hint: "Stable grounding.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I enjoy the atmosphere and possible encounters.", hint: "Soft openness.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I think deeply and observe everything around me.", hint: "Wide perception.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I walk efficiently and return with minimal deviation.", hint: "Optimized movement.", score: scoreFor("stegosaurus", "pterodactylus") },
-            ],
-        },
-        {
-            name: "Overstimulated Mode",
-            options: [
-                { label: "I push through and stay active anyway.", hint: "High resilience energy.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I reduce input and stabilize my environment.", hint: "Control restoration.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I move toward calmer people or spaces.", hint: "Social grounding.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I mentally detach and observe from distance.", hint: "Cognitive buffering.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I shut down unnecessary input and recover quietly.", hint: "Energy conservation.", score: scoreFor("stegosaurus", "parasaurolophus") },
-            ],
-        },
-        {
-            name: "Exit Mode",
-            options: [
-                { label: "I leave quickly once I'm ready.", hint: "Direct exit.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I follow a structured goodbye routine.", hint: "Orderly transition.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I say goodbye to people properly before leaving.", hint: "Social closure.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I time my exit strategically.", hint: "Situational awareness.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I leave with minimal disruption and noise.", hint: "Efficient departure.", score: scoreFor("stegosaurus", "pterodactylus") },
-            ],
-        },
-        {
-            name: "Kitchen Raid Mode",
-            options: [
-                { label: "I grab something immediately without hesitation.", hint: "Impulse action.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I check everything properly before choosing.", hint: "Structured selection.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I think about what others might want too.", hint: "Social awareness.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I scan all options before committing.", hint: "Analytical choice.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I pick the most efficient option available.", hint: "Minimal friction.", score: scoreFor("stegosaurus", "pterodactylus") },
-            ],
-        },
-        {
-            name: "Bus Mode",
-            options: [
-                { label: "I choose a seat quickly and move on.", hint: "Fast positioning.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I pick a structured, comfortable spot.", hint: "Stability first.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I sit near people I might interact with.", hint: "Social openness.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I evaluate the entire layout before sitting.", hint: "Spatial awareness.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I choose the most efficient exit-friendly seat.", hint: "Optimization mindset.", score: scoreFor("stegosaurus", "pterodactylus") },
-            ],
-        },
-        {
-            name: "Group Silence Mode",
-            options: [
-                { label: "I break the silence instantly.", hint: "Momentum through action.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I wait and let structure return naturally.", hint: "Stability preference.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I gently restart the conversation.", hint: "Social facilitation.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I analyze why the silence happened.", hint: "Meta awareness.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I stay calm and let it resolve itself.", hint: "Energy efficiency.", score: scoreFor("stegosaurus", "parasaurolophus") },
-            ],
-        },
-        {
-            name: "Idea Mode",
-            options: [
-                { label: "I act on it immediately.", hint: "Execution first.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I write it down and structure it.", hint: "System capture.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I share it with someone instantly.", hint: "Social processing.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I expand it mentally before doing anything.", hint: "Conceptual depth.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I store it for later optimization.", hint: "Efficient delay.", score: scoreFor("stegosaurus", "pterodactylus") },
-            ],
-        },
-        {
-            name: "Battery Mode",
-            options: [
-                { label: "I push through anyway.", hint: "High drive behavior.", score: scoreFor("trex", "parasaurolophus") },
-                { label: "I pause and recover structure.", hint: "Restorative discipline.", score: scoreFor("triceratops", "stegosaurus") },
-                { label: "I shift toward calmer social interactions.", hint: "Energy balancing.", score: scoreFor("parasaurolophus", "triceratops") },
-                { label: "I detach and observe instead of engaging.", hint: "Cognitive distancing.", score: scoreFor("pterodactylus", "stegosaurus") },
-                { label: "I minimize output and conserve energy.", hint: "Efficiency mode.", score: scoreFor("stegosaurus", "parasaurolophus") },
-            ],
-        },
     ];
 
-    // Optional explicit per-category overrides. Add entries when you want a specific
-    // question category to use a custom option array.
+    // Direct prompt-to-options mapping. Every question prompt is keyed here with its answer options.
+    // Feel free to edit options directly: change labels/hints as needed, modify dino score assignments.
     const QUESTION_OPTIONS = {
-        "Lunch mission": [
+        "When you feel your energy dip": [
+            { label: "I push through anyway.", hint: "High drive behavior.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I pause and recover structure.", hint: "Restorative discipline.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I shift toward calmer social interactions.", hint: "Energy balancing.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I detach and observe instead of engaging.", hint: "Cognitive distancing.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I minimize output and conserve energy.", hint: "Efficiency mode.", score: scoreFor("stegosaurus", "parasaurolophus") }
+        ],
+        "How do you approach a problem that requires creativity?": [
+            { label: "I act on it immediately.", hint: "Execution first.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I write it down and structure it.", hint: "System capture.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I share it with someone instantly.", hint: "Social processing.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I expand it mentally before doing anything.", hint: "Conceptual depth.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I store it for later optimization.", hint: "Efficient delay.", score: scoreFor("stegosaurus", "pterodactylus") }
+        ],
+        "How do you handle silence in a group setting?": [
+            { label: "I break the silence instantly.", hint: "Momentum through action.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I wait and let structure return naturally.", hint: "Stability preference.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I gently restart the conversation.", hint: "Social facilitation.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I analyze why the silence happened.", hint: "Meta awareness.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I stay calm and let it resolve itself.", hint: "Energy efficiency.", score: scoreFor("stegosaurus", "parasaurolophus") }
+        ],
+        "How do you approach sitting in a Bus?": [
+            { label: "I choose a seat quickly and move on.", hint: "Fast positioning.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I pick a structured, comfortable spot.", hint: "Stability first.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I sit near people I might interact with.", hint: "Social openness.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I evaluate the entire layout before sitting.", hint: "Spatial awareness.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I choose the most efficient exit-friendly seat.", hint: "Optimization mindset.", score: scoreFor("stegosaurus", "pterodactylus") }
+        ],
+        "When its on you to choose the first snack": [
+            { label: "I grab something immediately without hesitation.", hint: "Impulse action.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I check everything properly before choosing.", hint: "Structured selection.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I think about what others might want too.", hint: "Social awareness.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I scan all options before committing.", hint: "Analytical choice.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I pick the most efficient option available.", hint: "Minimal friction.", score: scoreFor("stegosaurus", "pterodactylus") }
+        ],
+        "How do you handle leaving a group setting?": [
+            { label: "I leave quickly once I'm ready.", hint: "Direct exit.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I follow a structured goodbye routine.", hint: "Orderly transition.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I say goodbye to people properly before leaving.", hint: "Social closure.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I time my exit strategically.", hint: "Situational awareness.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I leave with minimal disruption and noise.", hint: "Efficient departure.", score: scoreFor("stegosaurus", "pterodactylus") }
+        ],
+        "When you are highly overstimulated": [
+            { label: "I push through and stay active anyway.", hint: "High resilience energy.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I reduce input and stabilize my environment.", hint: "Control restoration.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I move toward calmer people or spaces.", hint: "Social grounding.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I mentally detach and observe from distance.", hint: "Cognitive buffering.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I shut down unnecessary input and recover quietly.", hint: "Energy conservation.", score: scoreFor("stegosaurus", "parasaurolophus") }
+        ],
+        "When you are about to leave for a night-walk": [
+            { label: "I walk with energy and change direction often.", hint: "Active momentum.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I stick to familiar routes and stay aware.", hint: "Stable grounding.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I enjoy the atmosphere and possible encounters.", hint: "Soft openness.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I think deeply and observe everything around me.", hint: "Wide perception.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I walk efficiently and return with minimal deviation.", hint: "Optimized movement.", score: scoreFor("stegosaurus", "pterodactylus") }
+        ],
+        "When you visit a Hotel you have never been to": [
+            { label: "I explore every corner immediately.", hint: "Curiosity-driven action.", score: scoreFor("trex", "pterodactylus") },
+            { label: "I unpack and organize everything right away.", hint: "Structure and control.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I make the space comfortable for everyone involved.", hint: "Soft social awareness.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I analyze the layout and optimize usage.", hint: "System thinking.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I immediately relax and reduce stimulation.", hint: "Efficiency in rest.", score: scoreFor("stegosaurus", "parasaurolophus") }
+        ],
+        "You just arrived at a Birthday party": [
+            { label: "I immediately join the action and greet everyone.", hint: "Fast social ignition.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I find my place and settle into the structure of the room.", hint: "Grounded entry.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I connect with people one by one naturally.", hint: "Social flow.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I scan the room and map the social dynamics.", hint: "Observational awareness.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I observe first and engage when it feels right.", hint: "Energy efficiency.", score: scoreFor("stegosaurus", "pterodactylus") }
+        ],
+        "Your usual 2AM Mode": [
+            { label: "I get random bursts of energy and start doing things.", hint: "Unstable momentum.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I try to stabilize and go back to routine.", hint: "Restoration instinct.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I message someone or connect quietly.", hint: "Soft connection.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I think deeply about everything at once.", hint: "Wide mental scope.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I minimize stimulation and try to reset.", hint: "System cooldown.", score: scoreFor("stegosaurus", "parasaurolophus") }
+        ],
+        "You go to IKEA visiting routine": [
+            { label: "I roam freely and discover things as I go.", hint: "Explorative instinct.", score: scoreFor("trex", "pterodactylus") },
+            { label: "I follow the path and stick to structure.", hint: "System compliance.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I turn it into a shared experience.", hint: "Social journey.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I analyze layouts and optimize the route.", hint: "Spatial strategy.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I avoid unnecessary decisions and streamline everything.", hint: "Efficiency mindset.", score: scoreFor("stegosaurus", "parasaurolophus") }
+        ],
+        "": [
+            { label: "I jump straight into the action.", hint: "High energy immersion.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I keep track of logistics and safety.", hint: "Grounded stability.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I stick with people and enhance the group vibe.", hint: "Social glue.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I move strategically between stages and moments.", hint: "Big-picture navigation.", score: scoreFor("pterodactylus", "trex") },
+            { label: "I find calm zones and manage energy carefully.", hint: "Energy optimization.", score: scoreFor("stegosaurus", "parasaurolophus") }
+        ],
+        "Your Couch Mode": [
+            { label: "I start doing things immediately from the couch.", hint: "Action doesn't wait.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I settle in properly and organize comfort.", hint: "Structured relaxation.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I end up talking or co-existing with others nearby.", hint: "Social warmth.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I drift into observation or planning.", hint: "Reflective thinking.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I fully optimize comfort and stay there.", hint: "Efficient stillness.", score: scoreFor("stegosaurus", "parasaurolophus") }
+        ],
+        "On an Airport you": [
+            { label: "I explore every corner and stay active.", hint: "Restless momentum.", score: scoreFor("trex", "pterodactylus") },
+            { label: "I find a gate and settle into a structured wait.", hint: "Controlled patience.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I observe people and stay socially aware.", hint: "Soft social mapping.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I scan the entire layout and optimize movement.", hint: "System overview.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I minimize stress and conserve energy.", hint: "Efficient calm.", score: scoreFor("stegosaurus", "parasaurolophus") }
+        ],
+        "When plans unexpectedly change": [
+            { label: "I adapt instantly and move forward.", hint: "Momentum adaptation.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I check what changes and re-stabilize.", hint: "Structured response.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I make sure everyone is still aligned.", hint: "Group harmony.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I reassess the situation from above.", hint: "Big-picture recalibration.", score: scoreFor("pterodactylus", "trex") },
+            { label: "I quietly rebuild the plan more efficiently.", hint: "System optimization.", score: scoreFor("stegosaurus", "pterodactylus") }
+        ],
+        "When you have to wait at least 5 minutes somewhere": [
+            { label: "I find something else to do immediately.", hint: "Active restlessness.", score: scoreFor("trex", "pterodactylus") },
+            { label: "I stay patient and structured.", hint: "Stable waiting.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I start a small conversation if possible.", hint: "Social filler.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I observe everything happening around me.", hint: "Environmental scanning.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I mentally detach and conserve energy.", hint: "Efficient patience.", score: scoreFor("stegosaurus", "parasaurolophus") }
+        ],
+        "In the supermarket": [
+            { label: "I wander and grab whatever looks good.", hint: "Impulse exploration.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I stick to a mental or written plan.", hint: "Controlled structure.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I consider what others might want too.", hint: "Social awareness.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I compare options carefully before choosing.", hint: "Analytical selection.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I optimize route efficiency through the aisles.", hint: "System efficiency.", score: scoreFor("stegosaurus", "pterodactylus") }
+        ],
+        "when it rains": [
+            { label: "I embrace it and keep moving anyway.", hint: "Unbothered momentum.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I immediately adjust plans and stay dry.", hint: "Risk control.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I slow down and enjoy the change of atmosphere.", hint: "Soft adaptation.", score: scoreFor("parasaurolophus", "stegosaurus") },
+            { label: "I analyze the best route or shelter options.", hint: "Strategic thinking.", score: scoreFor("pterodactylus", "triceratops") },
+            { label: "I optimize comfort and treat it as a pause.", hint: "Efficient rest.", score: scoreFor("stegosaurus", "parasaurolophus") }
+        ],
+        "You enter a new group chat": [
+            { label: "I jump in immediately with energy or memes.", hint: "Fast social ignition.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I read everything first before responding.", hint: "Structured awareness.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I react to the vibe and ease into it.", hint: "Social harmony.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I observe patterns before I say anything.", hint: "Analytical entry.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I wait for the right moment to drop something useful.", hint: "Timing optimization.", score: scoreFor("stegosaurus", "pterodactylus") }
+
+        ],
+        "You are standing in a long queue": [
+            { label: "I stay alert and find opportunities to move faster.", hint: "Restless energy.", score: scoreFor("trex", "pterodactylus") },
+            { label: "I accept the wait and stay organized.", hint: "Structured patience.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I chat with nearby people if it feels right.", hint: "Social flow.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I observe patterns in how the queue moves.", hint: "System awareness.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I mentally detach and optimize comfort.", hint: "Calm endurance.", score: scoreFor("stegosaurus", "parasaurolophus") }
+
+        ],
+        "You have to choose a snack": [
+            { label: "I grab the most exciting thing instantly.", hint: "Impulse-driven choice.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I pick the reliable classic snack.", hint: "Consistency wins.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I ask if anyone wants to share first.", hint: "Group-aware behavior.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I compare options before deciding carefully.", hint: "Deliberate selection.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I optimize for long-term satisfaction, not impulse.", hint: "Strategic choice.", score: scoreFor("stegosaurus", "pterodactylus") }
+
+        ],
+        "You are standing in an elevator": [
+            { label: "I break the silence with energy or humor.", hint: "Social spark.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I respectfully stay quiet and stable.", hint: "Grounded presence.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I make small friendly interactions if needed.", hint: "Soft social control.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I observe everyone subtly without engaging.", hint: "Analytical awareness.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I focus on exit timing and efficiency.", hint: "Exit optimization.", score: scoreFor("stegosaurus", "pterodactylus") }
+
+        ],
+        "You lost something important to you somewhere on the way": [
+            { label: "I immediately start searching in motion.", hint: "Action reduces uncertainty.", score: scoreFor("trex", "pterodactylus") },
+            { label: "I retrace steps carefully and systematically.", hint: "Structure first.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I ask others and turn it into a shared problem.", hint: "Collaborative recovery.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I pause and map the situation mentally.", hint: "Big-picture thinking.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I assume it will reappear and optimize waiting.", hint: "Calm efficiency.", score: scoreFor("stegosaurus", "parasaurolophus") }
+
+        ],
+        "In a Cafe": [
+            { label: "I scan the room and choose a strategic seat first.", hint: "Observation before action.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I order fast and adapt as I go.", hint: "Momentum first.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I wait for everyone else to feel comfortable first.", hint: "Social grounding.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I pick the quiet corner and settle in immediately.", hint: "Calm control.", score: scoreFor("stegosaurus", "triceratops") },
+            { label: "I notice everything but pretend I'm not analyzing it.", hint: "Hidden awareness.", score: scoreFor("pterodactylus", "trex") }
+
+        ],
+        "In complete Chaos": [
+            { label: "I commit instantly and trust the plot.", hint: "Bold under pressure.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I anchor the situation and slow the room down.", hint: "Stability first.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I turn the mess into something oddly cozy.", hint: "Soft power.", score: scoreFor("parasaurolophus", "stegosaurus") },
+            { label: "I step back, assess, and pick the smartest exit.", hint: "Wide-angle thinking.", score: scoreFor("pterodactylus", "trex") },
+            { label: "I fix the system so the chaos cannot return.", hint: "Quietly decisive.", score: scoreFor("stegosaurus", "triceratops") }
+
+        ],
+        "On Campus": [
+            { label: "I speed-walk like I am late to destiny.", hint: "Fast, direct, slightly chaotic.", score: scoreFor("trex", "pterodactylus") },
+            { label: "I check the schedule and protect my energy.", hint: "Grounded and cautious.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I find the friends-first route and make it easy.", hint: "Warm and practical.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I take the scenic path and notice everything.", hint: "Observant and elevated.", score: scoreFor("pterodactylus", "parasaurolophus") },
+            { label: "I create a tiny system so nothing derails.", hint: "Calm, organized, efficient.", score: scoreFor("stegosaurus", "triceratops") }
+        ],
+        "Your office mode": [
+            { label: "Three tabs, one deadline, all gas.", hint: "Bold execution.", score: scoreFor("trex", "pterodactylus") },
+            { label: "Color-coded tasks and clear owners.", hint: "Structure wins.", score: scoreFor("triceratops", "parasaurolophus") },
+            { label: "A tidy notebook and surgical focus.", hint: "Calm precision.", score: scoreFor("stegosaurus", "pterodactylus") },
+            { label: "Voice memo brainstorm and team sync.", hint: "Communicate, then accelerate.", score: scoreFor("parasaurolophus", "trex") },
+            { label: "Prototype first, explain later.", hint: "High-altitude iteration.", score: scoreFor("pterodactylus", "stegosaurus") }
+
+        ],
+        "When you are travelling": [
+            { label: "No map. Just appetite and speed.", hint: "Fearless detours.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Checklist, backup plan, charger, done.", hint: "Prepared and sturdy.", score: scoreFor("triceratops", "pterodactylus") },
+            { label: "Scenic route and zero rush.", hint: "Comfort over chaos.", score: scoreFor("stegosaurus", "triceratops") },
+            { label: "Playlist curator and vibes director.", hint: "Harmonize the whole crew.", score: scoreFor("parasaurolophus", "stegosaurus") },
+            { label: "Window seat with full aerial strategy.", hint: "Top-down thinking.", score: scoreFor("pterodactylus", "trex") }
+
+        ],
+        "Your social mode": [
+            { label: "I become the hype engine.", hint: "Loud, playful, magnetic.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I make sure everyone gets home safe.", hint: "Steady and dependable.", score: scoreFor("triceratops", "parasaurolophus") },
+            { label: "I host the side conversation that saves the night.", hint: "Warm and quietly iconic.", score: scoreFor("stegosaurus", "parasaurolophus") },
+            { label: "I steer every idea into something fun.", hint: "Expressive and connective.", score: scoreFor("parasaurolophus", "trex") },
+            { label: "I float between circles and map the room.", hint: "Strategic and quick.", score: scoreFor("pterodactylus", "triceratops") }
+
+        ],
+        "What does your ideal lunch mission look like?": [
             { label: "Sprint for the spicy deluxe and eat like a king.", hint: "Big bite, zero hesitation.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Pack the reliable sandwich and vibes stay steady.", hint: "Comfort over chaos.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Share a tray, start the group convo ASAP.", hint: "Social snack energy.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "Pick the curated macro bowl like it's study fuel.", hint: "Strategic and efficient.", score: scoreFor("pterodactylus", "stegosaurus") },
             { label: "Salad but make it sneaky satisfying.", hint: "Low-key healthy flex.", score: scoreFor("stegosaurus", "triceratops") },
         ],
-        "Mystery door": [
+        "What does your ideal lunch mission look like?": [
+            { label: "Sprint for the spicy deluxe and eat like a king.", hint: "Big bite, zero hesitation.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Pack the reliable sandwich and vibes stay steady.", hint: "Comfort over chaos.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Share a tray, start the group convo ASAP.", hint: "Social snack energy.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Pick the curated macro bowl like it's study fuel.", hint: "Strategic and efficient.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Salad but make it sneaky satisfying.", hint: "Low-key healthy flex.", score: scoreFor("stegosaurus", "triceratops") },
+        ],
+        "What is your approach to a mystery door?": [
             { label: "Kick the door, see what's up, no regrets.", hint: "Immediate action.", score: scoreFor("trex", "pterodactylus") },
             { label: "Cautiously peek and make a plan.", hint: "Calculated entry.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Call friends and bring vibes in together.", hint: "Group approach.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "Observe patterns then glide through like a pro.", hint: "High perspective.", score: scoreFor("pterodactylus", "trex") },
             { label: "Stay calm, note exits, then choose quietly.", hint: "Practical caution.", score: scoreFor("stegosaurus", "triceratops") },
         ],
-        "Group chat": [
+        "How do you usually behave in a group chat?": [
             { label: "Drop a chaotic funny and watch it explode.", hint: "Memes first.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Read, then send a thoughtful reply.", hint: "Measured presence.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Send the wholesome comment that everyone needs.", hint: "Warm glue.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "Scout the convo flow before I drop anything.", hint: "Strategic timing.", score: scoreFor("pterodactylus", "stegosaurus") },
             { label: "React and return later with something useful.", hint: "Low-key influence.", score: scoreFor("stegosaurus", "pterodactylus") },
         ],
-        "Backpack": [
+        "What goes in your backpack?": [
             { label: "Protein bar and a plan — instant energy.", hint: "Fuel-first.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Organizer, charger, and a spare pen.", hint: "Reliable kit.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Something for pals — snacks or stickers.", hint: "Share-ready.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "A gadget or two to optimize any moment.", hint: "Utility flex.", score: scoreFor("pterodactylus", "trex") },
             { label: "A calming notebook and a pen for micro-systems.", hint: "Low-key order.", score: scoreFor("stegosaurus", "triceratops") },
         ],
-        "Soundtrack": [
+        "What would your perfect soundtrack sound like?": [
             { label: "An adrenaline playlist that slaps — full send.", hint: "Big energy beats.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Something steady and warm, holds the room.", hint: "Comfort tempo.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Curated vibes that get people talking and dancing.", hint: "Social conductor.", score: scoreFor("parasaurolophus", "trex") },
             { label: "A thoughtful ambient set to map mood and moves.", hint: "High perspective curation.", score: scoreFor("pterodactylus", "stegosaurus") },
             { label: "Lo-fi efficiency beats — do the thing.", hint: "Calm focus.", score: scoreFor("stegosaurus", "pterodactylus") },
         ],
-        "Extra sauce": [
+        "What is your approach to adding extra sauce to a dish?": [
             { label: "Yes, pile it on and make it iconic.", hint: "Bold flavor.", score: scoreFor("trex", "parasaurolophus") },
             { label: "A little measured drizzle keeps everything safe.", hint: "Balanced.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Share it around — sauce = social currency.", hint: "Generous move.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "Analyze the match and add only the optimal note.", hint: "Strategic condiment.", score: scoreFor("pterodactylus", "stegosaurus") },
             { label: "Skip the drama, pick the consistent side.", hint: "Low-key reliable.", score: scoreFor("stegosaurus", "triceratops") },
         ],
-        "Road trip": [
+        "What's your role on a road trip?": [
             { label: "Drive fast, snack loud, make detours for the story.", hint: "Adventure-first.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Planner with playlists and charging stops mapped.", hint: "Organized comfort.", score: scoreFor("triceratops", "pterodactylus") },
             { label: "I run the aux and keep the vibes cohesive.", hint: "Social DJ.", score: scoreFor("parasaurolophus", "trex") },
             { label: "Window seat, map in head, options scanned.", hint: "Aerial navigation.", score: scoreFor("pterodactylus", "stegosaurus") },
             { label: "Slow scenic stops and efficient naps on schedule.", hint: "Steady comfort.", score: scoreFor("stegosaurus", "triceratops") },
         ],
-        "Desk square": [
+        "What does your workspace usually look like?": [
             { label: "Mini chaos but I get everything shipped.", hint: "Doer energy.", score: scoreFor("trex", "pterodactylus") },
             { label: "Organizer setup — folders, labels, explicit lanes.", hint: "Structure wins.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "A funny plant and something to spark convos.", hint: "Warm presence.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "Tools that let me triage problems quickly.", hint: "System-first.", score: scoreFor("pterodactylus", "trex") },
             { label: "Calm, minimal setup that quietly performs.", hint: "Low-drama efficiency.", score: scoreFor("stegosaurus", "parasaurolophus") },
         ],
-        "Surprise challenge": [
+        "How do you react to a surprise challenge?": [
             { label: "Jump in and solve it with vibes, not fear.", hint: "Courageous launch.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Stabilize, set limits, and execute steadily.", hint: "Anchor approach.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Ask who else is in and make it collaborative.", hint: "Team-first.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "Scan options, pick the best vector, then move.", hint: "Strategic pivot.", score: scoreFor("pterodactylus", "trex") },
             { label: "Quietly fix the system so it never surprises again.", hint: "Long-game solution.", score: scoreFor("stegosaurus", "triceratops") },
         ],
-        "Snack theft": [
+        "If you had to steal a snack, what's your strategy?": [
             { label: "Steal the boldest snack and flex about it.", hint: "Impulsive flex.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Take the dependable snack nobody misses.", hint: "Safe grab.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Grab one and offer to share like a hero.", hint: "Share move.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "Compare choices and pick the mathematically best one.", hint: "Analytical steal.", score: scoreFor("pterodactylus", "stegosaurus") },
             { label: "Take something nutritious and quietly enjoy it.", hint: "Sensible snack.", score: scoreFor("stegosaurus", "pterodactylus") },
         ],
-        "Room entry": [
+        "How do you usually enter a room full of people?": [
             { label: "Burst in with confidence and own it.", hint: "Main character entrance.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Enter steady, scan the room, take a spot.", hint: "Calm and reliable.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Wave, chat, and make the room warmer.", hint: "Social glue.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "Slip in, observe, and choose the best angle.", hint: "Tactical presence.", score: scoreFor("pterodactylus", "stegosaurus") },
             { label: "Find a quiet corner and quietly do your thing.", hint: "Low-key efficient.", score: scoreFor("stegosaurus", "triceratops") },
         ],
-        "Saturday weather": [
+        "What kind of Saturday weather matches your vibe?": [
             { label: "Sun and chaos — do everything, skip sleep.", hint: "Max energy day.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Mild and predictable, perfect for plans.", hint: "Solid routine.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Warm and social — meet people and snack.", hint: "Vibe first.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "Cloudy with optimized itinerary and photos.", hint: "Curated calm.", score: scoreFor("pterodactylus", "stegosaurus") },
             { label: "Cool, slow, and restorative.", hint: "Recharge mode.", score: scoreFor("stegosaurus", "parasaurolophus") },
         ],
-        "Dino sidekick": [
+        "If you had a dinosaur sidekick, what would you do with it?": [
             { label: "Train it to be loud and dramatic on command.", hint: "Big energy duo.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Teach it manners and reliability.", hint: "Discipline and loyalty.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Let it meet everyone and be social.", hint: "Friendly onboarding.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "Map its patterns and deploy it strategically.", hint: "Tactical sidekick.", score: scoreFor("pterodactylus", "trex") },
             { label: "Keep it calm and reliable for long-term wins.", hint: "Steady training.", score: scoreFor("stegosaurus", "triceratops") },
         ],
-        "Plan changes": [
+        "How do you react when plans suddenly change?": [
             { label: "Flip the plan fast and hype the pivot.", hint: "Bold adaptation.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Assess and re-anchor the team calmly.", hint: "Stability first.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Check with everyone and keep the vibe.", hint: "Harmonize the change.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "Zoom out, pick the best axis, then execute.", hint: "Strategic recalibration.", score: scoreFor("pterodactylus", "trex") },
             { label: "Quietly rebuild the route so it runs smoother.", hint: "Systemic fix.", score: scoreFor("stegosaurus", "triceratops") },
         ],
-        "Museum mode": [
+        "What's your style when visiting a museum?": [
             { label: "Run the tour like it's a flex moment.", hint: "Impressive presence.", score: scoreFor("trex", "pterodactylus") },
             { label: "Respectful, measured, and quietly in control.", hint: "Quiet guard.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Chat about the exhibits and connect people.", hint: "Social docent.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "Observe detail and note the best angles for photos.", hint: "Analytical viewer.", score: scoreFor("pterodactylus", "stegosaurus") },
             { label: "Enjoy slowly and take notes for later.", hint: "Calm appreciation.", score: scoreFor("stegosaurus", "parasaurolophus") },
         ],
-        "Midnight fridge": [
+        "It's midnight and you're hungry. What do you reach for?": [
             { label: "Raid for the bold snack and celebrate.", hint: "Impulsive delight.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Grab the reliable leftovers and reheat.", hint: "Practical choice.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Make something to share and start a late chat.", hint: "Social midnight.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "Pick the optimal combo for energy and return to bed.", hint: "Strategic snack.", score: scoreFor("pterodactylus", "stegosaurus") },
             { label: "Keep it light and calming for sleep later.", hint: "Low-key recovery.", score: scoreFor("stegosaurus", "parasaurolophus") },
         ],
-        "Hallway vibe": [
+        "What's your typical hallway vibe?": [
             { label: "Stride like you own the plot.", hint: "Confident walk.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Nod, keep steady, pass with purpose.", hint: "Reliable motion.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Smile and drop a quick hello to warm the path.", hint: "Friendly pulse.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "Scan, choose the best path, and glide.", hint: "Tactical pathing.", score: scoreFor("pterodactylus", "stegosaurus") },
             { label: "Move calmly and avoid the noise.", hint: "Low-key flow.", score: scoreFor("stegosaurus", "triceratops") },
         ],
-        "Lunch table": [
+        "What's your role at the lunch table?": [
             { label: "Claim the main chair and make big plans.", hint: "Leader energy.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Make sure everyone has enough and feels safe.", hint: "Anchor at table.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Be the social connector who brings snacks.", hint: "Community hub.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "Pick the seat with the best overview and acoustics.", hint: "Strategic seating.", score: scoreFor("pterodactylus", "stegosaurus") },
             { label: "Stay quiet and productive while you eat.", hint: "Focus-first.", score: scoreFor("stegosaurus", "triceratops") },
         ],
-        "Talking shoes": [
+        "If your shoes could talk, what would they say?": [
             { label: "They'd say 'I stomp and make an entrance.'", hint: "Loud footprint.", score: scoreFor("trex", "parasaurolophus") },
             { label: "They'd say 'I keep you grounded and steady.'", hint: "Stable steps.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "They'd say 'I meet people and start chats.'", hint: "Friendly soles.", score: scoreFor("parasaurolophus", "triceratops") },
             { label: "They'd say 'I map routes and find shortcuts.'", hint: "Navigation shoes.", score: scoreFor("pterodactylus", "trex") },
             { label: "They'd say 'I pick the comfortable, efficient route.'", hint: "Practical footwear.", score: scoreFor("stegosaurus", "triceratops") },
         ],
-        "Turn signal": [
+        "How do you usually approach making a turn while driving?": [
             { label: "Ignore it and swerve — bold move.", hint: "Immediate action.", score: scoreFor("trex", "pterodactylus") },
             { label: "Signal, check, and make the safe move.", hint: "Responsible driver.", score: scoreFor("triceratops", "stegosaurus") },
             { label: "Signal early and chat about the route.", hint: "Social navigation.", score: scoreFor("parasaurolophus", "triceratops") },
@@ -714,24 +641,6 @@
             { label: "Take the calm lane that gets you there intact.", hint: "Efficient caution.", score: scoreFor("stegosaurus", "triceratops") },
         ],
     };
-
-    // Mirror category-based entries into prompt-keyed entries for direct source lookup.
-    // This will create entries like QUESTION_OPTIONS["What does your ideal lunch mission look like?"]
-    // for any category already defined in QUESTION_OPTIONS.
-    try {
-        questionStems.forEach((stem) => {
-            try {
-                if (Object.prototype.hasOwnProperty.call(QUESTION_OPTIONS, stem.category) &&
-                    !Object.prototype.hasOwnProperty.call(QUESTION_OPTIONS, stem.prompt)) {
-                    QUESTION_OPTIONS[stem.prompt] = QUESTION_OPTIONS[stem.category];
-                }
-            } catch (e) {
-                // ignore individual mapping errors
-            }
-        });
-    } catch (e) {
-        // noop
-    }
 
     function getOptionsForStem(stem) {
         // 1) explicit mapping (direct dict lookup by category or exact prompt)
@@ -777,6 +686,32 @@
 
         // 5) fallback to shared responseStyles
         return responseStyles;
+    }
+
+    // Ensure every question prompt has a direct prompt-keyed entry in QUESTION_OPTIONS.
+    try {
+        questionStems.forEach((stem) => {
+            try {
+                if (!Object.prototype.hasOwnProperty.call(QUESTION_OPTIONS, stem.prompt)) {
+                    QUESTION_OPTIONS[stem.prompt] = getOptionsForStem(stem);
+                }
+            } catch (e) {
+                // ignore mapping errors per prompt
+            }
+        });
+    } catch (e) {
+        // noop
+    }
+
+    // Expose full mapping to window for inspection and copying to source.
+    // Open browser console and run: copy(JSON.stringify(window.WHATDINO_FULL_OPTIONS, null, 2))
+    // to copy all question→options mappings as code you can paste into QUESTION_OPTIONS object literal.
+    try {
+        if (typeof window !== "undefined") {
+            window.WHATDINO_FULL_OPTIONS = QUESTION_OPTIONS;
+        }
+    } catch (e) {
+        // noop
     }
 
     const app = document.querySelector("[data-whatdino-app]");
