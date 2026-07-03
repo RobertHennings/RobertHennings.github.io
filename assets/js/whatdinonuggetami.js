@@ -833,11 +833,13 @@
     }
 
     function getAvailableQuestions() {
-        const usedIds = safeRead(SESSION_USED_KEY);
-        // If you want to avoid repeats across sessions:
-        return questionBank.filter(q => !usedIds.includes(q.id));
-        // Or if you don't care about history, simply:
-        // return questionBank;
+        // Ignore used-history; always use full question bank
+        return questionBank;
+    }
+
+    function updatePoolCount() {
+        const available = getAvailableQuestions();
+        els.poolCount.textContent = `${available.length} prompts in archive • ${MAX_ROUNDS} questions per run`;
     }
 
     function selectQuestionSet() {
