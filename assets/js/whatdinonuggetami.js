@@ -1209,14 +1209,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const row = document.createElement("div");
             row.className = "whatdino-result-score";
+            row.style.setProperty("--score-color", scoreDino.color);
+            row.style.setProperty("--score-width", `${entry.percentage}%`);
 
-            const name = document.createElement("span");
-            name.textContent = scoreDino.shortName;
+            const label = document.createElement("span");
+            label.className = "whatdino-result-score__label";
+            label.textContent = scoreDino.shortName;
+
+            const bar = document.createElement("span");
+            bar.className = "whatdino-result-score__bar";
+            bar.setAttribute("aria-hidden", "true");
 
             const value = document.createElement("strong");
+            value.className = "whatdino-result-score__value";
             value.textContent = `${entry.percentage}%`;
 
-            row.append(name, value);
+            row.append(label, bar, value);
             scoreList.appendChild(row);
         });
 

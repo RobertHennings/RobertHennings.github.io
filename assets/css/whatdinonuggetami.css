@@ -291,6 +291,7 @@
 }
 
 .whatdino-result-score__bar {
+    display: block;
     position: relative;
     height: 12px;
     overflow: hidden;
