@@ -1209,8 +1209,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const row = document.createElement("div");
             row.className = "whatdino-result-score";
-            row.style.setProperty("--score-color", scoreDino.color);
-            row.style.setProperty("--score-width", `${entry.percentage}%`);
 
             const label = document.createElement("span");
             label.className = "whatdino-result-score__label";
@@ -1218,10 +1216,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const bar = document.createElement("span");
             bar.className = "whatdino-result-score__bar";
-            bar.setAttribute("aria-hidden", "true");
+
+            const fill = document.createElement("span");
+            fill.className = "whatdino-result-score__fill";
+            fill.style.width = `${entry.percentage}%`;
+            fill.style.background = `linear-gradient(90deg, ${scoreDino.color}, rgba(255, 255, 255, 0.88))`;
+            fill.style.boxShadow = `0 0 18px ${scoreDino.color}`;
+
+            bar.appendChild(fill);
 
             const value = document.createElement("strong");
             value.className = "whatdino-result-score__value";
+            value.style.color = scoreDino.color;
             value.textContent = `${entry.percentage}%`;
 
             row.append(label, bar, value);
