@@ -273,6 +273,90 @@ document.addEventListener("DOMContentLoaded", () => {
     // Direct prompt-to-options mapping. Every question prompt is keyed here with its answer options.
     // Feel free to edit options directly: change labels/hints as needed, modify dino score assignments.
     const QUESTION_OPTIONS = {
+        "Someone hands you a sticker sheet. What happens?": [
+            { label: "I use the loudest sticker immediately.", hint: "Instant expressive choice.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I save them carefully for the perfect place.", hint: "Controlled and intentional.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I hand them around and let everyone pick one.", hint: "Shared little joy.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I inspect every design before committing.", hint: "Pattern-first selection.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I choose one useful sticker and keep the rest neat.", hint: "Minimal but satisfying.", score: scoreFor("stegosaurus", "pterodactylus") },
+        ],
+        "Pick the chair you claim immediately.": [
+            { label: "The bold central seat with maximum presence.", hint: "Own the room.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "The stable seat with good back support.", hint: "Comfort and reliability.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "The seat near people I want to talk to.", hint: "Social positioning.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "The seat with the best view of everything.", hint: "Strategic overview.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "The quiet edge seat with an easy exit.", hint: "Low-friction comfort.", score: scoreFor("stegosaurus", "pterodactylus") },
+        ],
+        "A friend asks for your help moving a couch. You...": [
+            { label: "Grab one end and start moving before anyone overthinks.", hint: "Immediate muscle energy.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Measure the route and protect the walls.", hint: "Practical and careful.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Coordinate the group so nobody gets crushed.", hint: "People-aware logistics.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Rotate it mentally before touching it.", hint: "Spatial problem solving.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Find the cleanest path and make it efficient.", hint: "Minimum wasted effort.", score: scoreFor("stegosaurus", "pterodactylus") },
+        ],
+        "What's your natural state in a library?": [
+            { label: "Trying to be quiet but still somehow intense.", hint: "Contained energy.", score: scoreFor("trex", "pterodactylus") },
+            { label: "Settled with notes, charger, and a clear plan.", hint: "Study structure.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Whispering just enough to keep people alive.", hint: "Soft social presence.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Finding the best corner and tracking the whole room.", hint: "Quiet observation.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Calm, focused, and hard to interrupt.", hint: "Deep low-noise mode.", score: scoreFor("stegosaurus", "triceratops") },
+        ],
+        "How does your morning usually begin?": [
+            { label: "I launch out of bed and improvise the rest.", hint: "Fast-start energy.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I follow the routine that keeps the day stable.", hint: "Grounded start.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I check in with people or messages first.", hint: "Connection before motion.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I lie there mapping the day before moving.", hint: "Mental overview.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I start slowly and conserve energy.", hint: "Efficient wake-up.", score: scoreFor("stegosaurus", "pterodactylus") },
+        ],
+        "Your phone is blowing up. You...": [
+            { label: "Answer the loudest thread immediately.", hint: "Direct response.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Sort messages by urgency and handle them in order.", hint: "Controlled triage.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Send quick reactions so people know I'm alive.", hint: "Social maintenance.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Scan the pattern before deciding who needs me.", hint: "High-awareness filtering.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Mute what I can and answer only what matters.", hint: "Input management.", score: scoreFor("stegosaurus", "pterodactylus") },
+        ],
+        "You wake up later than planned. What happens?": [
+            { label: "I move fast and turn panic into momentum.", hint: "Recovery sprint.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "I rebuild the schedule from the first fixed point.", hint: "Re-stabilizing.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "I message whoever needs context and smooth it over.", hint: "Social repair.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "I calculate what can be skipped without damage.", hint: "Strategic adjustment.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "I simplify the day and protect my energy.", hint: "Efficient reset.", score: scoreFor("stegosaurus", "pterodactylus") },
+        ],
+        "Something works better than expected. You...": [
+            { label: "Celebrate loudly and push it even further.", hint: "Big win energy.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Lock in what worked so it stays reliable.", hint: "Stability from success.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Share the win with everyone involved.", hint: "Collective momentum.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Analyze why it worked so well.", hint: "Pattern extraction.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Quietly optimize it into a repeatable system.", hint: "Useful improvement.", score: scoreFor("stegosaurus", "pterodactylus") },
+        ],
+        "You lose track of a conversation topic. You...": [
+            { label: "Jump back in with confidence and hope it lands.", hint: "Bold recovery.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Ask for the missing piece directly.", hint: "Clear and steady.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Use warmth to reconnect with the thread.", hint: "Social repair.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Reconstruct the topic from clues.", hint: "Context analysis.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Listen quietly until the thread becomes clear again.", hint: "Low-energy recovery.", score: scoreFor("stegosaurus", "pterodactylus") },
+        ],
+        "Your bus/train is crowded and noisy. You...": [
+            { label: "Push through and claim a spot.", hint: "Direct survival mode.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Find the safest stable place to stand or sit.", hint: "Grounded awareness.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Stay polite and read the people around me.", hint: "Social navigation.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Map exits, movement, and quiet pockets.", hint: "Spatial strategy.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Reduce input and conserve energy until my stop.", hint: "Overload management.", score: scoreFor("stegosaurus", "pterodactylus") },
+        ],
+        "You suddenly feel like changing your room setup. You...": [
+            { label: "Start moving furniture immediately.", hint: "Impulse redesign.", score: scoreFor("trex", "pterodactylus") },
+            { label: "Plan the layout before anything moves.", hint: "Controlled change.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Ask someone what would make the room feel better.", hint: "Shared comfort.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Visualize five layouts before choosing one.", hint: "Spatial modeling.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Make one efficient change that improves everything.", hint: "Minimal high-impact fix.", score: scoreFor("stegosaurus", "pterodactylus") },
+        ],
+        "You start overthinking something small. You...": [
+            { label: "Do something decisive before the loop grows.", hint: "Action interrupts spiral.", score: scoreFor("trex", "parasaurolophus") },
+            { label: "Write down what is actually true.", hint: "Stability through facts.", score: scoreFor("triceratops", "stegosaurus") },
+            { label: "Talk it through with someone safe.", hint: "Social grounding.", score: scoreFor("parasaurolophus", "triceratops") },
+            { label: "Zoom out and identify the pattern.", hint: "Meta-awareness.", score: scoreFor("pterodactylus", "stegosaurus") },
+            { label: "Reduce input and let the thought pass.", hint: "Quiet regulation.", score: scoreFor("stegosaurus", "pterodactylus") },
+        ],
         "When you feel your energy dip": [
             { label: "I push through anyway.", hint: "High drive behavior.", score: scoreFor("trex", "parasaurolophus") },
             { label: "I pause and recover structure.", hint: "Restorative discipline.", score: scoreFor("triceratops", "stegosaurus") },
@@ -628,11 +712,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Maps questionStems prompts to QUESTION_OPTIONS keys when wording differs.
     const PROMPT_OPTION_ALIASES = {
+        "Someone hands you a sticker sheet. What happens?": "Someone hands you a sticker sheet. What happens?",
+        "Pick the chair you claim immediately.": "Pick the chair you claim immediately.",
+        "A friend asks for your help moving a couch. You...": "A friend asks for your help moving a couch. You...",
+        "What's your natural state in a library?": "What's your natural state in a library?",
+        "How does your morning usually begin?": "How does your morning usually begin?",
+        "Your phone is blowing up. You...": "Your phone is blowing up. You...",
+        "Your phone is constantly buzzing. You...": "Your phone is blowing up. You...",
+        "Your phone lights up with messages. Your reaction?": "Your phone is blowing up. You...",
+        "You wake up later than planned. What happens?": "You wake up later than planned. What happens?",
+        "Something works better than expected. You...": "Something works better than expected. You...",
+        "You lose track of a conversation topic. You...": "You lose track of a conversation topic. You...",
+        "Your bus/train is crowded and noisy. You...": "Your bus/train is crowded and noisy. You...",
+        "You suddenly feel like changing your room setup. You...": "You suddenly feel like changing your room setup. You...",
+        "You start overthinking something small. You...": "You start overthinking something small. You...",
         "A cashier offers extra sauce. Your reaction?": "What is your approach to adding extra sauce to a dish?",
         "A conversation stalls awkwardly. You...": "How do you handle silence in a group setting?",
         "A conversation suddenly goes quiet. You...": "How do you handle silence in a group setting?",
         "A conversation suddenly pauses. You...": "How do you handle silence in a group setting?",
-        "A friend asks for your help moving a couch. You...": "What's your role on a road trip?",
         "A friend cancels plans last minute. You...": "How do you react when plans suddenly change?",
         "A friend is late. How do you handle the wait?": "When you have to wait at least 5 minutes somewhere",
         "A group can't decide. What role do you take?": "In complete Chaos",
@@ -657,12 +754,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "How do you plan a weekend with zero pressure?": "Your Couch Mode",
         "How do you survive a midnight fridge raid?": "It's midnight and you're hungry. What do you reach for?",
         "How do you usually end your day?": "Your Couch Mode",
-        "How does your morning usually begin?": "Your usual 2AM Mode",
         "It starts raining right as you leave. What's your response?": "when it rains",
         "It's 2AM and you're awake. What are you doing?": "Your usual 2AM Mode",
         "No one can decide. You...": "In complete Chaos",
         "No one in the group can decide what to do. You...": "In complete Chaos",
-        "Pick the chair you claim immediately.": "How do you usually enter a room full of people?",
         "Pick your ideal seat on a bus or train.": "How do you approach sitting in a Bus?",
         "Pick your soundtrack for a tiny quest.": "What would your perfect soundtrack sound like?",
         "Plans suddenly change. What's your response?": "When plans unexpectedly change",
@@ -673,12 +768,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "Someone compliments you unexpectedly. Your reaction?": "Your social mode",
         "Someone drops a task on you last minute. You...": "In complete Chaos",
         "Someone gives you a task out of nowhere. You...": "In complete Chaos",
-        "Someone hands you a sticker sheet. What happens?": "What goes in your backpack?",
         "Someone invites you somewhere last minute. You...": "How do you react when plans suddenly change?",
         "Someone leaves you on read. You...": "How do you usually behave in a group chat?",
         "Someone offers you food. What's your reaction?": "You have to choose a snack",
         "Someone suddenly proposes a toast. You...": "Your social mode",
-        "Something works better than expected. You...": "In complete Chaos",
         "The checkout line is chaotic. You...": "You are standing in a long queue",
         "The day is ending and you reflect. You...": "Your Couch Mode",
         "The elevator briefly stops between floors. You...": "You are standing in an elevator",
@@ -697,7 +790,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "What is your lunch table role?": "What's your role at the lunch table?",
         "What is your strategy for a last-minute study sprint?": "Your office mode",
         "What kind of snack tray are you?": "You have to choose a snack",
-        "What's your natural state in a library?": "How do you usually enter a room full of people?",
         "Which item actually lives in your backpack?": "What goes in your backpack?",
         "Which snack are you most likely to steal?": "If you had to steal a snack, what's your strategy?",
         "Which vibe do you radiate in a hallway?": "What's your typical hallway vibe?",
@@ -730,7 +822,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "You join an active group chat. What do you do first?": "You enter a new group chat",
         "You lose focus mid-task. You...": "When you feel your energy dip",
         "You lose something important. What's your first move?": "You lost something important to you somewhere on the way",
-        "You lose track of a conversation topic. You...": "How do you handle silence in a group setting?",
         "You must decide something instantly. What do you do?": "In complete Chaos",
         "You open a door and hesitate. Why?": "What is your approach to a mystery door?",
         "You open a kitchen cabinet with no plan. What happens?": "You have to choose a snack",
@@ -741,13 +832,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "You sit at a shared table alone. What happens?": "How do you usually enter a room full of people?",
         "You sit at a shared table alone. You...": "How do you usually enter a room full of people?",
         "You sit down on a couch with no plans. What happens?": "Your Couch Mode",
-        "You start overthinking something small. You...": "How do you approach a problem that requires creativity?",
         "You step onto a bus or train. Where do you go?": "How do you approach sitting in a Bus?",
-        "You suddenly feel like changing your room setup. You...": "What does your workspace usually look like?",
         "You suddenly have 3 free hours. You...": "Your Couch Mode",
         "You suddenly have time in the middle of the day. You...": "Your Couch Mode",
         "You unexpectedly get one free hour. You...": "Your Couch Mode",
-        "You wake up later than planned. What happens?": "Your usual 2AM Mode",
         "You wake up with no plans. What now?": "Your Couch Mode",
         "You walk into a birthday party. What happens first?": "You just arrived at a Birthday party",
         "You walk into a room and everyone is quiet. You...": "How do you handle silence in a group setting?",
@@ -772,13 +860,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "You're waiting for someone who's late. What do you do?": "When you have to wait at least 5 minutes somewhere",
         "You're walking down a hallway. What's your vibe?": "What's your typical hallway vibe?",
         "You're wandering a supermarket with no goal. What happens?": "In the supermarket",
-        "Your bus/train is crowded and noisy. You...": "How do you approach sitting in a Bus?",
         "Your desk has one free square. What goes there?": "What does your workspace usually look like?",
         "Your food takes too long to arrive. You...": "When you have to wait at least 5 minutes somewhere",
         "Your mood suddenly changes mid-situation. You...": "When you feel your energy dip",
-        "Your phone is blowing up. You...": "How do you usually behave in a group chat?",
-        "Your phone is constantly buzzing. You...": "How do you usually behave in a group chat?",
-        "Your phone lights up with messages. Your reaction?": "How do you usually behave in a group chat?",
         "Your plans get delayed by hours. You...": "How do you react when plans suddenly change?",
         "Your social energy drops mid-event. You...": "When you feel your energy dip",
         "Your social energy suddenly dips. You...": "When you feel your energy dip",
@@ -1060,6 +1144,15 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     }
 
+    function getScorePercentages(ranked) {
+        const total = ranked.reduce((sum, entry) => sum + entry.value, 0);
+
+        return ranked.map((entry) => ({
+            ...entry,
+            percentage: total ? Math.round((entry.value / total) * 100) : 0,
+        }));
+    }
+
     function scoreToMarker(ranked) {
         const total = ranked.reduce((sum, row) => sum + row.value, 0);
 
@@ -1101,6 +1194,33 @@ document.addEventListener("DOMContentLoaded", () => {
         els.resultName.textContent = dino.name;
         els.resultCopy.textContent = dino.copy;
         els.resultPill.textContent = dino.shortName;
+
+        const existingScores = els.resultRegion.querySelector("[data-result-scores]");
+        if (existingScores) {
+            existingScores.remove();
+        }
+
+        const scoreList = document.createElement("div");
+        scoreList.setAttribute("data-result-scores", "");
+        scoreList.className = "whatdino-result-scores";
+
+        getScorePercentages(winner.ranked).forEach((entry) => {
+            const scoreDino = dinoById[entry.id];
+
+            const row = document.createElement("div");
+            row.className = "whatdino-result-score";
+
+            const name = document.createElement("span");
+            name.textContent = scoreDino.shortName;
+
+            const value = document.createElement("strong");
+            value.textContent = `${entry.percentage}%`;
+
+            row.append(name, value);
+            scoreList.appendChild(row);
+        });
+
+        els.resultRegion.appendChild(scoreList);
 
         els.resultRegion.classList.remove("is-hidden");
         setGameMeta();
@@ -1317,7 +1437,9 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.arc(markerX, markerY, 26, 0, Math.PI * 2);
         ctx.stroke();
 
-        const scoreLabel = ranked.map((entry) => `${dinoById[entry.id].shortName}: ${entry.value}`).join("  •  ");
+        const scoreLabel = getScorePercentages(ranked)
+            .map((entry) => `${dinoById[entry.id].shortName}: ${entry.percentage}%`)
+            .join("  •  ");
         ctx.fillStyle = "rgba(255, 255, 255, 0.85)";
         ctx.font = "600 20px Outfit, sans-serif";
         ctx.fillText(scoreLabel, centerX, y + size + 56);
