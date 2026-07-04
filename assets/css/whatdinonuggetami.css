@@ -270,6 +270,24 @@
     justify-content: center;
 }
 
+.whatdino-result-scores {
+    display: grid;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.whatdino-result-score {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.whatdino-result-score strong {
+    font-weight: 800;
+}
+
 .whatdino-btn {
     border: 0;
     border-radius: 999px;
