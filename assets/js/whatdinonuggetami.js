@@ -1,4 +1,4 @@
-(function () {
+document.addEventListener("DOMContentLoaded", () => {
     const SESSION_STATE_KEY = "whatdino.sessionState.v2";
     const USER_HISTORY_KEY = "whatdino.userHistory.v2";
     const SESSION_USED_KEY = `${SESSION_STATE_KEY}.used`;
@@ -469,7 +469,7 @@
             { label: "Voice memo brainstorm and team sync.", hint: "Communicate, then accelerate.", score: scoreFor("parasaurolophus", "trex") },
             { label: "Prototype first, explain later.", hint: "High-altitude iteration.", score: scoreFor("pterodactylus", "stegosaurus") }
         ],
-        "When you are travelling": [
+        "When you are traveling": [
             { label: "No map. Just appetite and speed.", hint: "Fearless detours.", score: scoreFor("trex", "parasaurolophus") },
             { label: "Checklist, backup plan, charger, done.", hint: "Prepared and sturdy.", score: scoreFor("triceratops", "pterodactylus") },
             { label: "Scenic route and zero rush.", hint: "Comfort over chaos.", score: scoreFor("stegosaurus", "triceratops") },
@@ -725,7 +725,7 @@
         "You get invited somewhere last minute. Your reaction?": "How do you react when plans suddenly change?",
         "You get on a bus. Where do you sit and why?": "How do you approach sitting in a Bus?",
         "You go for a walk at night. What happens?": "When you are about to leave for a night-walk",
-        "You have a long train ride ahead. What do you do?": "When you are travelling",
+        "You have a long train ride ahead. What do you do?": "When you are traveling",
         "You have ten minutes between lectures. What do you do?": "On Campus",
         "You join an active group chat. What do you do first?": "You enter a new group chat",
         "You lose focus mid-task. You...": "When you feel your energy dip",
@@ -737,7 +737,7 @@
         "You open a random kitchen cabinet. What's your behavior?": "You have to choose a snack",
         "You open the kitchen cabinet. What are you looking for?": "You have to choose a snack",
         "You open the kitchen. How do you choose a snack?": "You have to choose a snack",
-        "You realize you took the wrong direction. What now?": "When you are travelling",
+        "You realize you took the wrong direction. What now?": "When you are traveling",
         "You sit at a shared table alone. What happens?": "How do you usually enter a room full of people?",
         "You sit at a shared table alone. You...": "How do you usually enter a room full of people?",
         "You sit down on a couch with no plans. What happens?": "Your Couch Mode",
@@ -763,7 +763,7 @@
         "You're in a supermarket with no list. What's your strategy?": "In the supermarket",
         "You're in charge of music for a group. What do you do?": "What would your perfect soundtrack sound like?",
         "You're in control of music. What's your approach?": "What would your perfect soundtrack sound like?",
-        "You're on your way somewhere and detour. You...": "When you are travelling",
+        "You're on your way somewhere and detour. You...": "When you are traveling",
         "You're out on a night walk. What's your vibe?": "When you are about to leave for a night-walk",
         "You're ready to leave a place. How do you exit?": "How do you handle leaving a group setting?",
         "You're ready to leave somewhere. How do you exit?": "How do you handle leaving a group setting?",
@@ -827,6 +827,7 @@
     const app = document.querySelector("[data-whatdino-app]");
 
     if (!app) {
+        console.warn("WhatDino: missing [data-whatdino-app] container.");
         return;
     }
 
@@ -853,6 +854,20 @@
         pentagram: app.querySelector("[data-pentagram]"),
         nodeButtons: Array.from(app.querySelectorAll("[data-dino-node]")),
     };
+
+    const missingElements = Object.entries(els)
+        .filter(([key, value]) => {
+            if (key === "nodeButtons") {
+                return !Array.isArray(value) || value.length === 0;
+            }
+            return !value;
+        })
+        .map(([key]) => key);
+
+    if (missingElements.length) {
+        console.warn("WhatDino: missing required elements:", missingElements);
+        return;
+    }
 
     const state = {
         questions: [],
@@ -1433,4 +1448,4 @@
         els.questionText.textContent = "Start the run to get your first question.";
         setStatus("5 random questions. No repeats in your local archive.");
     }
-})();
+});
