@@ -181,7 +181,7 @@
   license: "Free"
   notes: "European power system data"
 
-  - name: "ESMA Databases and Registers"
+- name: "ESMA Databases and Registers"
   description: "European financial-market registers and databases covering regulated entities, funds, securities, benchmarks, and supervisory disclosures."
   category: "Finance"
   type: "Non-Academic"
